@@ -1,1 +1,45 @@
+{"manifest_version":2,
+    "browser_action": {
+        "default_popup": "index.html",
+        "default_title": "Mutho Keyboard",
+        "default_icon": {
+            "128": "images/i128.png",
+            "32": "images/i32.png",
+            "16": "images/i16.png"}
+      },
+      "icons": {
+        "128": "images/i128.png",
+        "32": "images/i32.png",
+        "16": "images/i16.png"
+      },
+      "background": {
+        "persistent": false,
+        "scripts": [
+          "background.js",
+          "vendor/jquery/dist/jquery.js",
+          "vendor/Caret.js/src/jquery.caret.js",
+          "vendor/jquery.atwho/dist/js/jquery.atwho.js",
+          "vendor/jquery-autosize/jquery.autosize.js",
+          "vendor/jquery-touchswipe/jquery.touchSwipe.js",
+          "vendor/device.js/lib/device.js",
+          "js/avro.min.js",
+          "js/main.js",
+          "js/misc.js",
+          "js/options.js"
+        ]
+      },
+      "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["js/fontfix.js"],
+          "run_at": "document_end"
+        }
+      ],
+      "permissions": ["storage","activeTab"],
 
+
+     "name":"Mutho Keyboard (মুঠো কিবোর্ড) for Chrome",
+     "short_name":"Mutho Keyboard (মুঠো কিবোর্ডর)",
+     "version":"1.1.1",
+     "description":"Mutho Keyboard for Chrome. Banglay Likhun Shohoje! ক্রোম ব্রাউজার এর জন্য  মুঠো কিবোর্ড । বাংলায় লিখুন সহজে! "
+    }
