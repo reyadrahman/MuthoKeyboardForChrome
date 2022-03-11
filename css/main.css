@@ -136,3 +136,17 @@ footer .wrapper {
   .sys main .content {
     border-color: #1f1f1f;
   }
+main .content textarea {
+    padding-bottom: 0;
+    -webkit-tap-highlight-color: none;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer .toggle {
+    margin: 10px 0 20px;
+  }
