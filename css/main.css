@@ -368,3 +368,16 @@ input, textarea, select, button, label {
 .atwho-view ul li a {
   -webkit-tap-highlight-color: #d90429;
 }
+
+
+/* Swipe */
+.swipe {
+  display: none;
+  overflow: hidden;
+  width: 220px;
+}
+
+.mobile .swipe,
+.tablet .swipe {
+  display: block;
+}
