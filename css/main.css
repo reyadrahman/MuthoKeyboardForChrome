@@ -150,3 +150,77 @@ main .content textarea {
   footer .toggle {
     margin: 10px 0 20px;
   }
+  
+  
+/* Candidate Window */
+  .atwho-view ul:before, .atwho-view ul:after {
+    content: "";
+    display: table;
+  }
+
+  .atwho-view ul:after {
+    clear: both;
+  }
+
+  .atwho-view ul li {
+    float: left;
+    border-right: 1px solid #333;
+  }
+}
+
+/* Switch to horizontal mode in mobile & tablet regardless of screen size */
+.mobile .atwho-view ul:before,
+.mobile .atwho-view ul:after,
+.tablet .atwho-view ul:before,
+.tablet .atwho-view ul:after {
+  content: "";
+  display: table;
+}
+
+.mobile .atwho-view ul:after,
+.tablet .atwho-view ul:after {
+  clear: both;
+}
+
+.mobile .atwho-view ul li,
+.tablet .atwho-view ul li {
+  float: left;
+  border-right: 1px solid #333;
+}
+
+footer .logo {
+  background: url('../images/logo-secondary.png') no-repeat bottom right;
+  margin-top: 10px;
+  height: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #333;
+}
+
+footer .social {
+  text-align: right;
+  height: 32px;
+  margin: 10px 0;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+footer h2 {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+footer ul li a {
+  display: block;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+footer ul li.active a {
+  background: #d90429;
+  color: #fff;
+  border-radius: 5px;
+}
