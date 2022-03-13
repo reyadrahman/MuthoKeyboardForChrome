@@ -381,3 +381,7 @@ input, textarea, select, button, label {
 .tablet .swipe {
   display: block;
 }
+
+.swipe div {
+  font-size: 17px;
+  background: -webkit-gradient(linear,left top, right top
