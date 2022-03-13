@@ -384,4 +384,4 @@ input, textarea, select, button, label {
 
 .swipe div {
   font-size: 17px;
-  background: -webkit-gradient(linear,left top, right top
+  background: -webkit-gradient(linear,left top,right top,color-stop(0, #4d4d4d), color-stop(0.4, #4d4d4d)
