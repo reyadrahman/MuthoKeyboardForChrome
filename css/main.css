@@ -411,3 +411,8 @@ input, textarea, select, button, label {
   margin-top: 15px;
 
 }
+.mode_label {
+  float: left;
+  line-height: 57px;
+  margin-right: 10px;
+}
