@@ -416,3 +416,18 @@ input, textarea, select, button, label {
   line-height: 57px;
   margin-right: 10px;
 }
+
+/*dark css*/
+.wrapper_dark {
+  background: #212121 !important;
+}
+.footer_dark {
+  color: #eee;
+  background: #303030 !important;
+}
+.text_light_mode{
+  color:#232323 !important;
+}
+.text_dark_mode{
+  color:#dfdbdb !important;
+}
