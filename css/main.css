@@ -396,3 +396,13 @@ input, textarea, select, button, label {
   -webkit-user-select: none;
   user-select: none;
 }
+
+
+@-webkit-keyframes slidetounlock {
+  0% {
+    background-position: -220px 0;
+  }
+  100% {
+    background-position: 220px 0;
+  }
+}
