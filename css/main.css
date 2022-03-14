@@ -406,3 +406,8 @@ input, textarea, select, button, label {
     background-position: 220px 0;
   }
 }
+
+.mode_switch {
+  margin-top: 15px;
+
+}
