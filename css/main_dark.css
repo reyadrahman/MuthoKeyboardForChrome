@@ -19,3 +19,8 @@ a {
 .cf:after {
   clear: both;
 }
+
+.cf {
+  *zoom: 1;
+}
+/* Clearfix end */
