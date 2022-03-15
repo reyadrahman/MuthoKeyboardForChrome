@@ -24,3 +24,7 @@ a {
   *zoom: 1;
 }
 /* Clearfix end */
+
+.left {
+  float: left;
+}
