@@ -32,3 +32,12 @@ a {
 .right {
   float: right;
 }
+
+ul {
+  list-style: none;
+}
+
+html, body {
+  height: 100%;
+  font: 14px/25px 'Avenir', 'Arial', 'sans-serif';
+}
