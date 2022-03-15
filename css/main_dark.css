@@ -8,3 +8,10 @@ a {
   color: #eee;
   text-decoration: none;
 }
+
+/* Clear Fix */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
