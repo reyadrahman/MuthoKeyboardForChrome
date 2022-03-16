@@ -69,3 +69,6 @@ main .content textarea {
   color:#dfdbdb;/*fall back for IE/EDGE*/
 }
 
+footer .wrapper {
+  padding: 0px 20px 20px 20px;
+}
