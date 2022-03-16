@@ -46,3 +46,8 @@ html, body {
   background: #212121;
   height: 100%;
 }
+
+footer {
+  color: #eee;	
+  background: #303030;
+}
