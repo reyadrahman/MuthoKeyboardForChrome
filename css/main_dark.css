@@ -41,3 +41,8 @@ html, body {
   height: 100%;
   font: 14px/25px 'Avenir', 'Arial', 'sans-serif';
 }
+
+#wrapper {
+  background: #212121;
+  height: 100%;
+}
