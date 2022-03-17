@@ -72,3 +72,18 @@ main .content textarea {
 footer .wrapper {
   padding: 0px 20px 20px 20px;
 }
+
+/* Desktop */
+@media all and (min-width: 801px) {
+  #wrapper {
+    overflow: hidden;
+  }
+
+  main, footer {
+    float: left;
+  }
+
+  main {
+    height: 100%;
+    margin-right: -260px;
+  }
