@@ -111,3 +111,10 @@ footer .wrapper {
 }
 
   
+.desktop-only {
+  display: none;
+}
+
+.desktop .desktop-only {
+  display: block;
+}
