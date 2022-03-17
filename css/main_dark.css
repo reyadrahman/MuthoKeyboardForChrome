@@ -87,3 +87,27 @@ footer .wrapper {
     height: 100%;
     margin-right: -260px;
   }
+
+  main .content {
+    height: 100%;
+    margin: 0 280px 0 20px;
+    overflow-y: auto;
+    cursor: text;
+  }
+
+  footer {
+    width: 260px;
+    height: auto !important;
+    min-height: 100%;
+  }
+
+  footer .toggle {
+    margin: 20px 0 40px;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
+
+  
