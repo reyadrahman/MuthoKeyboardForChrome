@@ -125,3 +125,8 @@ footer .wrapper {
     height: auto !important;
     min-height: 100%;
   }
+
+  main {
+    min-height: 100%;
+  }
+  
