@@ -144,3 +144,11 @@ footer .wrapper {
     padding-bottom: 0;
     -webkit-tap-highlight-color: none;
   }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  
