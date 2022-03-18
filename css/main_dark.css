@@ -136,3 +136,6 @@ footer .wrapper {
     border-right: 3px solid #ffa729;
   }
   
+  .sys main .content {
+    border-color: #1f1f1f;
+  }
