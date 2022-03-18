@@ -110,7 +110,6 @@ footer .wrapper {
   }
 }
 
-  
 .desktop-only {
   display: none;
 }
@@ -118,3 +117,11 @@ footer .wrapper {
 .desktop .desktop-only {
   display: block;
 }
+
+/* Mobile */
+@media all and (max-width: 800px) {
+  #wrapper {
+    position: relative;
+    height: auto !important;
+    min-height: 100%;
+  }
