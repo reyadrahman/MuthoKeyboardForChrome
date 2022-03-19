@@ -156,3 +156,8 @@ footer .wrapper {
     margin: 10px 0 20px;
   }
   
+  /* Candidate Window */
+  .atwho-view ul:before, .atwho-view ul:after {
+    content: "";
+    display: table;
+  }
