@@ -180,3 +180,8 @@ footer .wrapper {
   content: "";
   display: table;
 }
+
+.mobile .atwho-view ul:after,
+.tablet .atwho-view ul:after {
+  clear: both;
+}
