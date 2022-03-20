@@ -171,3 +171,12 @@ footer .wrapper {
     border-right: 1px solid #333;
   }
 }
+
+/* Switch to horizontal mode in mobile & tablet regardless of screen size */
+.mobile .atwho-view ul:before,
+.mobile .atwho-view ul:after,
+.tablet .atwho-view ul:before,
+.tablet .atwho-view ul:after {
+  content: "";
+  display: table;
+}
