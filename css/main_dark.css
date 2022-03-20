@@ -161,3 +161,7 @@ footer .wrapper {
     content: "";
     display: table;
   }
+  
+    .atwho-view ul:after {
+    clear: both;
+  }
