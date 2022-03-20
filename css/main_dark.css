@@ -185,3 +185,9 @@ footer .wrapper {
 .tablet .atwho-view ul:after {
   clear: both;
 }
+
+.mobile .atwho-view ul li,
+.tablet .atwho-view ul li {
+  float: left;
+  border-right: 1px solid #333;
+}
