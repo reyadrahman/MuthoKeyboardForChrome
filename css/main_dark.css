@@ -199,3 +199,13 @@ footer .logo {
   padding-top: 10px;
   border-top: 1px solid #333;
 }
+
+footer .social {
+  text-align: right;
+  height: 32px;
+  margin: 10px 0;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+
