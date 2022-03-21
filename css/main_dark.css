@@ -208,4 +208,12 @@ footer .social {
   padding-top: 10px;
 }
 
+footer h2 {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
 
