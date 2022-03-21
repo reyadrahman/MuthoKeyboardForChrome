@@ -191,3 +191,11 @@ footer .wrapper {
   float: left;
   border-right: 1px solid #333;
 }
+
+footer .logo {
+  background: url('../images/logo-secondary.png') no-repeat bottom right;
+  margin-top: 10px;
+  height: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #333;
+}
