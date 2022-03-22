@@ -217,3 +217,14 @@ footer h2 {
   margin-bottom: 20px;
 }
 
+footer ul li.active a {
+  background: #ffa729;
+  color: #1f1f1f;
+  border-radius: 2px;
+}
+
+footer .social img {
+  height: 32px;
+  width: 32px;
+}
+
