@@ -244,3 +244,15 @@ input, textarea, select, button, label {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+.switch {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 58px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
