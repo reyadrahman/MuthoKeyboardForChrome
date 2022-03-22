@@ -217,6 +217,12 @@ footer h2 {
   margin-bottom: 20px;
 }
 
+footer ul li a {
+  display: block;
+  padding: 5px;
+  margin: 5px 0;
+}
+
 footer ul li.active a {
   background: #ffa729;
   color: #1f1f1f;
@@ -227,4 +233,3 @@ footer .social img {
   height: 32px;
   width: 32px;
 }
-
