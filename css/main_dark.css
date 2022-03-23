@@ -267,5 +267,27 @@ input, textarea, select, button, label {
   -webkit-appearance: none;
 }
 
+.switch>label {
+  display: block;
+  position: relative;
+  height: 25px;
+  line-height: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffa729;
+  text-align: center;
+  text-transform: uppercase;
+  background: #1f1f1f;
+  border: 2px solid #ffa729;
+  border-radius: 13px;
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
 
+.switch>input:checked+label:before {
+  content: attr(data-on);
+  left: 1px;
+}
 
