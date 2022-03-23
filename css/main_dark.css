@@ -256,3 +256,16 @@ input, textarea, select, button, label {
   user-select: none;
   cursor: pointer;
 }
+
+.switch>input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  -webkit-appearance: none;
+}
+
+
+
