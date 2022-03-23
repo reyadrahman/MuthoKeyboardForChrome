@@ -291,3 +291,10 @@ input, textarea, select, button, label {
   left: 1px;
 }
 
+.switch>label:before {
+  content: attr(data-off);
+  position: absolute;
+  top: 0;
+  right: 3px;
+  width: 33px;
+}
