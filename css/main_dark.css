@@ -327,3 +327,13 @@ input, textarea, select, button, label {
   border-radius: 2px;
   margin-right: 2px;
 }
+
+.label.normal {
+  color: #ffa729;
+  background: #1f1f1f;
+}
+
+.slogan {
+  padding: 5px 0;
+  text-align: right;
+}
