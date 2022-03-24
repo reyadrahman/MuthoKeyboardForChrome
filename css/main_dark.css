@@ -347,3 +347,7 @@ input, textarea, select, button, label {
 .atwho-view .cur {
   background: #ffa729;
 }
+
+.atwho-view .cur a {
+  color: #ffffff !important;
+}
