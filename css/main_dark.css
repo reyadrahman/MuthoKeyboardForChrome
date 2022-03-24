@@ -315,3 +315,15 @@ input, textarea, select, button, label {
   background: #ffa729;
   border-radius: 13px;
 }
+
+/* Checkbox End */
+
+.label {
+  font: 13px/13px 'Menlo', monospace;
+  font-weight: bold;
+  padding: 5px 7px;
+  background: #ffa729;
+  color: #1f1f1f;
+  border-radius: 2px;
+  margin-right: 2px;
+}
