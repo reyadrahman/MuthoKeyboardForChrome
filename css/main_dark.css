@@ -360,3 +360,7 @@ input, textarea, select, button, label {
 .atwho-view ul li:last-child a {
   color: #ffa544;
 }
+
+.atwho-view ul li:last-child {
+  border: none;
+}
