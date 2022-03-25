@@ -351,3 +351,8 @@ input, textarea, select, button, label {
 .atwho-view .cur a {
   color: #ffffff !important;
 }
+
+.atwho-view ul li {
+  border-bottom-color: #333;
+  -webkit-tap-highlight-color: #ffa729;
+}
