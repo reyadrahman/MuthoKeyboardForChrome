@@ -364,3 +364,7 @@ input, textarea, select, button, label {
 .atwho-view ul li:last-child {
   border: none;
 }
+
+.atwho-view ul li a {
+  -webkit-tap-highlight-color: #ffa729;
+}
