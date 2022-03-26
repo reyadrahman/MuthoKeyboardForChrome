@@ -375,3 +375,8 @@ input, textarea, select, button, label {
   overflow: hidden;
   width: 220px;
 }
+
+.mobile .swipe,
+.tablet .swipe {
+  display: block;
+}
