@@ -16,3 +16,7 @@ loader {
     background: #1f1f1f;
     z-index: 99;
 }
+
+#wrapper {
+    display: none;
+}
