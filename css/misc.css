@@ -20,3 +20,16 @@ loader {
 #wrapper {
     display: none;
 }
+
+#loader h1 {
+    font-family: 'Avenir', 'Arial', sans-serif;
+    color: #d90429;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1.5px;
+    text-align: center;
+    width: 200px;
+    margin-top: 20px;
+    -webkit-animation: fade 3s infinite;
+    animation: fade 3s infinite;
+}
