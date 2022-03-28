@@ -33,3 +33,15 @@ loader {
     -webkit-animation: fade 3s infinite;
     animation: fade 3s infinite;
 }
+
+.container {
+    width: 220px;
+    padding-top: 200px;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.anim-container {
+    margin: auto;
+    width: 110px;
+}
