@@ -45,3 +45,29 @@ loader {
     margin: auto;
     width: 110px;
 }
+
+.ex {
+    font-family: 'Avenir', 'Arial', sans-serif;
+    color: #d90429;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    width: 200px;
+    -webkit-animation: fade 3s infinite;
+    animation: fade 3s infinite;
+    font-size: 4em;
+    width: 40px;
+    height: 40px;
+    margin-top: -24px;
+    display: inline-block;
+    border: 4px double #d90429;
+}
+
+.ex:nth-child(1) {
+    -webkit-animation: spin1 3s infinite 1s;
+    -webkit-transform-origin: 50% 52%;
+    animation: spin1 3s infinite 1s;
+    transform-origin: 50% 52%;
+    margin-left: 10px;
+}
+
