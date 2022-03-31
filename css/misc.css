@@ -189,3 +189,9 @@ Web3
     transform-origin: 50% 52%;
     margin-left: -20px;
 }
+
+.ex:nth-child(4) {
+    margin-left: -1px;
+    -webkit-animation: spin1 3s infinite 1s;
+    -webkit-transform-origin: 50% 52%;
+  
