@@ -180,3 +180,12 @@ Welcome To Hell
 Thank You ☺️
 No is not an answer.
 Web3
+
+.ex:nth-child(4) {
+    margin-left: -1px;
+    -webkit-animation: spin1 3s infinite 1s;
+    -webkit-transform-origin: 50% 52%;
+    animation: spin1 3s infinite 1s;
+    transform-origin: 50% 52%;
+    margin-left: -20px;
+}
