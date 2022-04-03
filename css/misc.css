@@ -307,3 +307,12 @@ Web3
         opacity: 1;
     }
 }
+@-moz-keyframes fade {
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
