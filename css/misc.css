@@ -298,3 +298,12 @@ Web3
         transform: rotate(-360deg);
     }
 }
+@-webkit-keyframes fade {
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
