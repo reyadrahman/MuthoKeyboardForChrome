@@ -334,3 +334,9 @@ Web3
         opacity: 1;
     }
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    main {
+        display: block;
+    }
+}
