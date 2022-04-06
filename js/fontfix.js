@@ -1,6 +1,6 @@
 var f = '';
 
-try  {
+try {
 	chrome.storage.local.get('banglaFont', function (items) {
 		if (chrome.runtime.error) {
 			console.log(chrome.runtime.error);
@@ -10,3 +10,7 @@ try  {
 		}
 		c(f);
 	});
+} catch (e) {
+	f = 'Siyam Rupali';
+	c(f);
+}
