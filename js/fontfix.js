@@ -93,3 +93,7 @@ function c(f) {
 		}
 	});
 
+	var container = document.documentElement || document.body;
+	var config = { childList: true, subtree: true };
+	observer.observe(container, config);
+}
