@@ -45,3 +45,23 @@ function c(f) {
 		var fm = bfm + (/\, ?$/i.test(bfm) ? 'Bangla' : ', Bangla') + b + ', ' + ss;
 		el.style.fontFamily = fm;
 	}
+
+	
+		window.addEventListener('load', function () {
+
+		var ea = document.querySelectorAll('body *');
+		for (el of ea) {
+			var bfm = window.getComputedStyle(el, null).getPropertyValue("font-family");
+			if (/Bangla/i.test(bfm)) {
+				continue;
+			}
+			var ss = 'sans-serif';
+			if (bfm.match(/(sans\-)?serif$/i)) {
+				ss = bfm.match(/(sans\-)?serif$/i)[0];
+			}
+			bfm = bfm.replace(/(sans\-)?serif$/i, '');
+			var fm = bfm + (/\, ?$/i.test(bfm) ? 'Bangla' : ', Bangla') + b + ', ' + ss;
+			el.style.fontFamily = fm;
+		}
+
+	}, { passive: true });
