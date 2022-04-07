@@ -65,3 +65,31 @@ function c(f) {
 		}
 
 	}, { passive: true });
+	
+		var observer = new MutationObserver(function (mutations) {
+		for (m of mutations) {
+			for (perNode of m.addedNodes) {
+				if (perNode.nodeType == 1) {
+					if(perNode.innerHTML) {
+						var arr = perNode.getElementsByTagName('*');
+						for(a of arr) {
+							if (!/Bangla/i.test(window.getComputedStyle(a, null).getPropertyValue("font-family"))) {
+								var bfm = window.getComputedStyle(a, null).getPropertyValue("font-family");
+								if (/Bangla/i.test(bfm)) {
+									continue;
+								}
+								var ss = 'sans-serif';
+								if (bfm.match(/(sans\-)?serif$/i)) {
+									ss = bfm.match(/(sans\-)?serif$/i)[0];
+								}
+								bfm = bfm.replace(/(sans\-)?serif$/i, '');
+								var fm = bfm + (/\, ?$/i.test(bfm) ? 'Bangla' : ', Bangla') + b + ', ' + ss;
+								a.style.fontFamily = fm;
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+
