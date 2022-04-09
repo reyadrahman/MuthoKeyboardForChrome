@@ -27,3 +27,15 @@ $(function () {
       LS = window.localStorage,
       runningEvent = 0,
       selectedTpl = '<li class="cur" data-value="${name}"><a href="#">${name}</a></li>';
+
+    KEY_CODE = {
+    DOWN: 40,
+    UP: 38,
+    ESC: 27,
+    TAB: 9,
+    ENTER: 13,
+    SPACE: 32,
+    CTRL: 17,
+    P: 80,
+    N: 78
+  };
