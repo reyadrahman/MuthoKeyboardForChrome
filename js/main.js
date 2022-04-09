@@ -65,5 +65,12 @@ $(function () {
     }
   );
 
-  
+  // Functions
+  toggleLanguage = function () {
+    isBN = !isBN;
+    $(document.body).toggleClass('sys');
+    $statusControl.prop('checked', isBN);
+    runningEvent = 0;
+  };
+
   
