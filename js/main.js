@@ -73,4 +73,13 @@ $(function () {
     runningEvent = 0;
   };
 
-  
+  fetchAllDrafts = function () {
+    $('.drafts ul li a').each(function (index) {
+      var data = '';
+      if (LS['draft-' + index]) {
+        data = JSON.parse(LS['draft-' + index]);
+      }
+      drafts[index] = data;
+      $(this).text(makeTitle(data, index));
+    });
+  };
