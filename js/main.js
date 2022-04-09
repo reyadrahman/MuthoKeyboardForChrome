@@ -110,3 +110,11 @@ $(function () {
     $editor.trigger('autosize.resize').focus();
   };
   
+
+    // Event Handlers
+  $(document).on('keydown', function (e){
+    if(e.ctrlKey && [190,110].indexOf(e.keyCode) !== -1) {
+      e.preventDefault();
+      toggleLanguage();
+    }
+  });
