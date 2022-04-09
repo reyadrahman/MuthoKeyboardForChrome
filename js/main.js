@@ -39,3 +39,16 @@ $(function () {
     P: 80,
     N: 78
   };
+  
+    //Show incompatibily alert
+  if (navigator.userAgent.match(/Android/i)){
+    if (!LS.browserWarning){
+      LS.browserWarning = 1;
+      alert('AvroPad may not work as expected due to some bugs of Android. Ask Google to get their things right.');
+    }
+  }
+
+  isHorizontal = function () {
+    return (device.mobile() || device.tablet() || $(window).width() <= 800);
+  }
+
