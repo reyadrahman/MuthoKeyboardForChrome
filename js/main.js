@@ -52,3 +52,18 @@ $(function () {
     return (device.mobile() || device.tablet() || $(window).width() <= 800);
   }
 
+  avro = new AvroPhonetic(
+    function () {
+      if (LS.AvroCandidateSelection) {
+        return JSON.parse(LS.AvroCandidateSelection);
+      } else {
+        return {};
+      }
+    },
+    function (cS) {
+      LS.AvroCandidateSelection = JSON.stringify(cS);
+    }
+  );
+
+  
+  
