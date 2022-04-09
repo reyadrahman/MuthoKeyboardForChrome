@@ -83,3 +83,10 @@ $(function () {
       $(this).text(makeTitle(data, index));
     });
   };
+
+  makeTitle = function (content, index) {
+    if (!!content){
+      content = content.trim().split('\n')[0];
+    } else {
+      content = '';
+    }
