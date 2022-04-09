@@ -90,3 +90,17 @@ $(function () {
     } else {
       content = '';
     }
+
+    
+        if (content && content.trim().length) {
+      if (content.length <= titleLength) return content;
+      if (content[titleLength] === ' ') {
+        return content.substring(0, titleLength);
+      } else {
+        var pos = content.lastIndexOf(' ', titleLength);
+        return content.substring(0, pos);
+      }
+    } else {
+      return 'Draft ' + (index + 1);
+    }
+  };
