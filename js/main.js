@@ -104,3 +104,9 @@ $(function () {
       return 'Draft ' + (index + 1);
     }
   };
+  
+  loadDraftId = function (id) {
+    $editor.val(drafts[id]);
+    $editor.trigger('autosize.resize').focus();
+  };
+  
