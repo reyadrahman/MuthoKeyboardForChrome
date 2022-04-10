@@ -135,3 +135,6 @@ $(function () {
 
    // Init
   fetchAllDrafts();
+  
+  // Load the first draft
+  $('.drafts ul li:first a').trigger('click');
