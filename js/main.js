@@ -422,3 +422,16 @@ $(function () {
               }
             }
           }
+          
+                    // console.log(offset.top, cWinHeight, winHeight);
+          // if (offset.top + cWinHeight > winHeight){
+          //   offset.top = offset.top - cWinHeight - 100;
+          // }
+        }
+        if (--runningEvent < 0) {
+          runningEvent = 0;
+        }
+        return offset;
+      }
+    }
+  })
