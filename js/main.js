@@ -132,3 +132,6 @@ $(function () {
     currentDraftId = $(this).index();
     loadDraftId(currentDraftId);
   });
+
+   // Init
+  fetchAllDrafts();
