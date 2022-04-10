@@ -181,3 +181,32 @@ $(function () {
           };
         });
       },
+
+      before_reposition: function (offset) {
+        // Landscape Mode
+        if (isHorizontal()) {
+          var winWidth = $(window).width(),
+              winHeight = $(window).innerHeight(),
+              $view = this.view.$el;
+
+          $view.css({
+            maxWidth: winWidth,
+            minWidth: 0
+          });
+          $view.offset({left: 0, top: offset.top});
+
+          var cWinWidth = $view.width(),
+              cWinHeight = $view.height();
+
+          if (offset.left + cWinWidth > winWidth) {
+            if (cWinWidth + 2 >= winWidth) {
+              offset.left = 0;
+            } else {
+              var left = offset.left - cWinWidth;
+              if (left >= 0) {
+                offset.left = left;
+              } else {
+                offset.left = 0;
+              }
+            }
+          }
