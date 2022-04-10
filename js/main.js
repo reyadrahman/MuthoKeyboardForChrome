@@ -138,3 +138,46 @@ $(function () {
   
   // Load the first draft
   $('.drafts ul li:first a').trigger('click');
+
+  // The TextArea
+  $editor
+  .autosize()
+  .prop('disabled', false)
+  .atwho({
+    at: '',
+    data: {},
+    tpl: '<li data-value="${name}"><a href="#">${name}</a></li>',
+    start_with_space: false,
+    limit: 11,
+    highlight_first: false,
+    callbacks: {
+      //just match everything baby :3
+      matcher: function (flag, subtext) {
+        if (!isBN) return null; // always return null when user selects english
+        var res = subtext.match(/\s?([^\s]+)$/);
+        // console.log(subtext, res);
+        if (res == null) return null;
+        var bnregex = /[\u0980-\u09FF]+$/;
+        if (bnregex.exec(res[1])) return null;
+        return res[1];
+      },
+      // main work is done here
+      filter: function (query, data, search_key) {
+        // console.log(query, data, search_key);
+        var bnarr = avro.suggest(query);
+
+        bnarr.words = bnarr.words.slice(0,10);
+        if (avro.candidate(query) === query) {
+          bnarr.prevSelection = bnarr.words.length;
+        }
+        bnarr.words.push(query);
+
+        selectedIndex = 0;
+        return $.map(bnarr.words, function (value, i) {
+          if (i === bnarr.prevSelection) selectedIndex = i;
+          return {
+            id: i,
+            name: value
+          };
+        });
+      },
