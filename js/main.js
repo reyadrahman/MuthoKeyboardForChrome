@@ -111,10 +111,24 @@ $(function () {
   };
   
 
-    // Event Handlers
+  // Event Handlers
   $(document).on('keydown', function (e){
     if(e.ctrlKey && [190,110].indexOf(e.keyCode) !== -1) {
       e.preventDefault();
       toggleLanguage();
     }
+  });
+
+  $statusControl.on('change', function () {
+    isBN = $(this).is(':checked');
+  });
+
+  $('.drafts ul').on('click', 'li', function (e) {
+    e.preventDefault();
+    $('.drafts ul li.active').removeClass('active');
+    $(this).addClass('active');
+    $current = $(this).find('a');
+
+    currentDraftId = $(this).index();
+    loadDraftId(currentDraftId);
   });
