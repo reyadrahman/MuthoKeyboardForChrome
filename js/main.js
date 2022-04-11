@@ -462,3 +462,7 @@ $(function () {
         e.preventDefault();
         view.hide();
         break;
+    case KEY_CODE.UP:
+        e.preventDefault();
+        view.prev();
+        break;
