@@ -470,3 +470,6 @@ $(function () {
         if (!e.ctrlKey) {
           return;
         }
+        e.preventDefault();
+        view.prev();
+        break;
