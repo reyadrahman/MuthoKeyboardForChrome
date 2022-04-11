@@ -466,3 +466,7 @@ $(function () {
         e.preventDefault();
         view.prev();
         break;
+    case KEY_CODE.P:
+        if (!e.ctrlKey) {
+          return;
+        }
