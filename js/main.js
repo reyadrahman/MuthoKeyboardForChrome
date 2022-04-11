@@ -457,3 +457,8 @@ $(function () {
       runningEvent = 0; // when writing english or using system IM, keep event to 0.
       return;
     }
+    switch (e.keyCode) {
+      case KEY_CODE.ESC:
+        e.preventDefault();
+        view.hide();
+        break;
