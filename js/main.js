@@ -451,3 +451,9 @@ $(function () {
     if (((e.keyCode >= 65 && e.keyCode <= 90) || extraKeys.indexOf(e.keyCode) !== -1 ) && !e.metaKey) {
       ++runningEvent;
     }
+    var view, _ref;
+    view = (_ref = this.controller()) != null ? _ref.view : void 0;
+    if (!(view && view.visible())) {
+      runningEvent = 0; // when writing english or using system IM, keep event to 0.
+      return;
+    }
