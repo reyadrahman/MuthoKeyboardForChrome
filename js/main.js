@@ -499,3 +499,9 @@ $(function () {
             setTimeout(chooseFunc, 50);            
           }
         }
+chooseFunc();
+        break;
+      default:
+        $.noop();
+    }
+  };
