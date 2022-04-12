@@ -505,3 +505,7 @@ chooseFunc();
         $.noop();
     }
   };
+  
+   $('.content').on('click', function () {
+    $editor.focus();
+  });
