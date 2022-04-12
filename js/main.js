@@ -483,3 +483,6 @@ $(function () {
       case KEY_CODE.TAB:
       case KEY_CODE.ENTER:
       case KEY_CODE.SPACE:
+        if (!view.visible()) {
+          return;
+        }
