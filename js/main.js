@@ -477,3 +477,9 @@ $(function () {
         if (!e.ctrlKey) {
           return;
         }
+         e.preventDefault();
+        view.next();
+        break;
+      case KEY_CODE.TAB:
+      case KEY_CODE.ENTER:
+      case KEY_CODE.SPACE:
