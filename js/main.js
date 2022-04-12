@@ -473,3 +473,7 @@ $(function () {
         e.preventDefault();
         view.prev();
         break;
+      case KEY_CODE.N:
+        if (!e.ctrlKey) {
+          return;
+        }
