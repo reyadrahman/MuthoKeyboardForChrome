@@ -487,3 +487,15 @@ $(function () {
           return;
         }
      e.preventDefault();
+        
+         var that = this;
+        var chooseFunc = function() {
+          // trying commit
+          if (runningEvent < 1) {
+            // commit
+            view.choose.call(view);
+          } else {
+            // delaying, still processing
+            setTimeout(chooseFunc, 50);            
+          }
+        }
