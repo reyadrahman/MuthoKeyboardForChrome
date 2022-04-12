@@ -486,3 +486,4 @@ $(function () {
         if (!view.visible()) {
           return;
         }
+     e.preventDefault();
