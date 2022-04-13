@@ -533,3 +533,8 @@ chooseFunc();
 
     applicationCache.addEventListener('updateready', handleAppCache, false);
   }
+  
+    handleAppCache();
+
+});
+
