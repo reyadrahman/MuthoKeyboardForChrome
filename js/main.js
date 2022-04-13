@@ -509,3 +509,7 @@ chooseFunc();
    $('.content').on('click', function () {
     $editor.focus();
   });
+
+  
+  $.fn.swipe.defaults.excludedElements = 'label, button, input, select, a, .noSwipe';
+
