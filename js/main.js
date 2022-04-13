@@ -524,5 +524,10 @@ chooseFunc();
     if (applicationCache == undefined) {
       return;
     }
+    if (applicationCache.status == applicationCache.UPDATEREADY) {
+      applicationCache.swapCache();
+      location.reload();
+      return;
+    }
 
 
