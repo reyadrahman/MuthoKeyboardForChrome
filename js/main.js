@@ -520,4 +520,9 @@ chooseFunc();
     allowPageScroll: 'vertical'
   });
 
+  function handleAppCache() {
+    if (applicationCache == undefined) {
+      return;
+    }
+
 
