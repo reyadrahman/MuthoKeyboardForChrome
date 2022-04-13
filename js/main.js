@@ -512,4 +512,12 @@ chooseFunc();
 
   
   $.fn.swipe.defaults.excludedElements = 'label, button, input, select, a, .noSwipe';
+  
+  $('body').swipe({
+    swipeLeft: toggleLanguage,
+    swipeRight: toggleLanguage,
+    fallbackToMouseEvents: false,
+    allowPageScroll: 'vertical'
+  });
+
 
