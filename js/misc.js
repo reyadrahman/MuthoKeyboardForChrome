@@ -13,3 +13,19 @@ function applyLight(){
     $("textarea").removeClass("text_dark_mode");
     $("footer").removeClass("footer_dark");
 }
+
+
+function switchMode() {
+
+    if (document.getElementById("myCheckbox").checked === true) {
+        // changeCSS('/css/main_dark.css', 2);
+        applyDark()
+        localStorage.setItem("modePrefLS", "dark");
+
+    } else {
+        // changeCSS('/css/main.css', 2);
+        applyLight()
+        localStorage.setItem("modePrefLS", "light");
+    }
+
+}
