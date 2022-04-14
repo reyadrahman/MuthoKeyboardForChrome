@@ -29,3 +29,24 @@ function switchMode() {
     }
 
 }
+
+
+
+function loadModePref() {
+
+    console.log(localStorage.getItem("modePrefLS")+ " mode loaded");
+    var modeLoad = localStorage.getItem("modePrefLS");
+
+    if (modeLoad === "light" || modeLoad === null) {
+
+        applyLight()
+        document.getElementById("myCheckbox").checked = false;
+    }
+    else {
+
+        applyDark()
+        document.getElementById("myCheckbox").checked = true;
+    }
+}
+
+loadModePref();
