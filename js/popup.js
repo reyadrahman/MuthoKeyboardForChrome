@@ -18,3 +18,14 @@ chrome.storage.local.get('banglaFont', function (items) {
         }
     }
 });
+
+saveButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    chrome.storage.local.set({ banglaFont: selection.value }, function () {
+        chrome.tabs.query({ currentWindow: true, active: true }, function (tabArray) { 
+            chrome.tabs.executeScript(tabArray[0].id, { file: 'js/fontfix.js' }, function() {
+                close();
+            });
+        });
+    });
+});
