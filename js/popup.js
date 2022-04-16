@@ -11,3 +11,10 @@ chrome.storage.local.get('banglaFont', function (items) {
             break;
         }
     }
+    if (!matched) {
+        selection.style.color = 'dimgrey';
+        if (items.banglaFont) {
+            customFont.value = items.banglaFont;
+        }
+    }
+});
