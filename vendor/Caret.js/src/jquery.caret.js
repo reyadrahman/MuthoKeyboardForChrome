@@ -8,8 +8,19 @@
 */
 
 
+
 /*
 本插件操作 textarea 或者 input 内的插入符
 只实现了获得插入符在文本框中的位置，我设置
 插入符的位置.
 */
+
+
+(function() {
+  (function(factory) {
+    if (typeof define === 'function' && define.amd) {
+      return define(['jquery'], factory);
+    } else {
+      return factory(window.jQuery);
+    }
+  })(function($) {
