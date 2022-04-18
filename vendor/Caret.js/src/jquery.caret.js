@@ -54,3 +54,17 @@
         preCaretTextRange.setEndPoint("EndToEnd", textRange);
         return preCaretTextRange.text.length;
       };
+     
+           EditableCaret.prototype.getPos = function() {
+        var clonedRange, pos, range;
+        if (range = this.range()) {
+          clonedRange = range.cloneRange();
+          clonedRange.selectNodeContents(this.domInputor);
+          clonedRange.setEnd(range.endContainer, range.endOffset);
+          pos = clonedRange.toString().length;
+          clonedRange.detach();
+          return pos;
+        } else if (oDocument.selection) {
+          return this.getOldIEPos();
+        }
+      };
