@@ -32,3 +32,16 @@
         this.$inputor = $inputor;
         this.domInputor = this.$inputor[0];
       }
+      
+      
+      EditableCaret.prototype.setPos = function(pos) {
+        return this.domInputor;
+      };
+
+      EditableCaret.prototype.getIEPosition = function() {
+        return $.noop();
+      };
+
+      EditableCaret.prototype.getPosition = function() {
+        return $.noop();
+      };
