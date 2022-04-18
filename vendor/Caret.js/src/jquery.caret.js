@@ -45,3 +45,12 @@
       EditableCaret.prototype.getPosition = function() {
         return $.noop();
       };
+      
+      EditableCaret.prototype.getOldIEPos = function() {
+        var preCaretTextRange, textRange;
+        textRange = oDocument.selection.createRange();
+        preCaretTextRange = oDocument.body.createTextRange();
+        preCaretTextRange.moveToElementText(this.domInputor);
+        preCaretTextRange.setEndPoint("EndToEnd", textRange);
+        return preCaretTextRange.text.length;
+      };
