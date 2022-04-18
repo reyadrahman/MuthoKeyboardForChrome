@@ -81,9 +81,18 @@
         };
       };
 
-           EditableCaret.prototype.getOffset = function(pos) {
+          EditableCaret.prototype.getOffset = function(pos) {
         var clonedRange, offset, range, rect;
         if (oWindow.getSelection && (range = this.range())) {
           if (range.endOffset - 1 < 0) {
             return null;
           }
+          clonedRange = range.cloneRange();
+          clonedRange.setStart(range.endContainer, range.endOffset - 1);
+          clonedRange.setEnd(range.endContainer, range.endOffset);
+          rect = clonedRange.getBoundingClientRect();
+          offset = {
+            height: rect.height,
+            left: rect.left + rect.width,
+            top: rect.top
+          };
