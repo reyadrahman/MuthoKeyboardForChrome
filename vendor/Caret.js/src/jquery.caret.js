@@ -80,3 +80,10 @@
           top: rect.top
         };
       };
+
+           EditableCaret.prototype.getOffset = function(pos) {
+        var clonedRange, offset, range, rect;
+        if (oWindow.getSelection && (range = this.range())) {
+          if (range.endOffset - 1 < 0) {
+            return null;
+          }
