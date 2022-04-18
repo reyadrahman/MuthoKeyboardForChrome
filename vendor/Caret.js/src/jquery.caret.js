@@ -8,7 +8,6 @@
 */
 
 
-
 /*
 本插件操作 textarea 或者 input 内的插入符
 只实现了获得插入符在文本框中的位置，我设置
@@ -32,8 +31,7 @@
         this.$inputor = $inputor;
         this.domInputor = this.$inputor[0];
       }
-      
-      
+
       EditableCaret.prototype.setPos = function(pos) {
         return this.domInputor;
       };
@@ -45,7 +43,7 @@
       EditableCaret.prototype.getPosition = function() {
         return $.noop();
       };
-      
+
       EditableCaret.prototype.getOldIEPos = function() {
         var preCaretTextRange, textRange;
         textRange = oDocument.selection.createRange();
@@ -54,8 +52,8 @@
         preCaretTextRange.setEndPoint("EndToEnd", textRange);
         return preCaretTextRange.text.length;
       };
-     
-           EditableCaret.prototype.getPos = function() {
+
+      EditableCaret.prototype.getPos = function() {
         var clonedRange, pos, range;
         if (range = this.range()) {
           clonedRange = range.cloneRange();
@@ -68,7 +66,7 @@
           return this.getOldIEPos();
         }
       };
-      
+
       EditableCaret.prototype.getOldIEOffset = function() {
         var range, rect;
         range = oDocument.selection.createRange().duplicate();
@@ -81,7 +79,7 @@
         };
       };
 
-          EditableCaret.prototype.getOffset = function(pos) {
+      EditableCaret.prototype.getOffset = function(pos) {
         var clonedRange, offset, range, rect;
         if (oWindow.getSelection && (range = this.range())) {
           if (range.endOffset - 1 < 0) {
