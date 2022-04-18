@@ -24,3 +24,11 @@
       return factory(window.jQuery);
     }
   })(function($) {
+    "use strict";
+    var EditableCaret, InputCaret, Mirror, Utils, configure, methods, oDocument, oFrame, oWindow, pluginName, setContextBy;
+    pluginName = 'caret';
+    EditableCaret = (function() {
+      function EditableCaret($inputor) {
+        this.$inputor = $inputor;
+        this.domInputor = this.$inputor[0];
+      }
