@@ -68,3 +68,15 @@
           return this.getOldIEPos();
         }
       };
+      
+      EditableCaret.prototype.getOldIEOffset = function() {
+        var range, rect;
+        range = oDocument.selection.createRange().duplicate();
+        range.moveStart("character", -1);
+        rect = range.getBoundingClientRect();
+        return {
+          height: rect.bottom - rect.top,
+          left: rect.left,
+          top: rect.top
+        };
+      };
