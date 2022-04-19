@@ -106,3 +106,15 @@
         return offset;
       };
 
+            EditableCaret.prototype.range = function() {
+        var sel;
+        if (!oWindow.getSelection) {
+          return;
+        }
+        sel = oWindow.getSelection();
+        if (sel.rangeCount > 0) {
+          return sel.getRangeAt(0);
+        } else {
+          return null;
+        }
+      };
