@@ -94,3 +94,8 @@
             left: rect.left + rect.width,
             top: rect.top
           };
+        
+          clonedRange.detach();
+        } else if (oDocument.selection) {
+          offset = this.getOldIEOffset();
+        }
