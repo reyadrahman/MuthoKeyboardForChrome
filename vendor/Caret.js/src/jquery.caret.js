@@ -106,7 +106,7 @@
         return offset;
       };
 
-            EditableCaret.prototype.range = function() {
+         EditableCaret.prototype.range = function() {
         var sel;
         if (!oWindow.getSelection) {
           return;
@@ -118,3 +118,7 @@
           return null;
         }
       };
+
+      return EditableCaret;
+
+    })();
