@@ -99,3 +99,10 @@
         } else if (oDocument.selection) {
           offset = this.getOldIEOffset();
         }
+          if (offset && !oFrame) {
+          offset.top += $(oWindow).scrollTop();
+          offset.left += $(oWindow).scrollLeft();
+        }
+        return offset;
+      };
+
