@@ -149,10 +149,23 @@
         return pos;
       };
 
-      InputCaret.prototype.getPos = function() {
+            InputCaret.prototype.getPos = function() {
         if (oDocument.selection) {
           return this.getIEPos();
         } else {
           return this.domInputor.selectionStart;
         }
+      };
+
+      InputCaret.prototype.setPos = function(pos) {
+        var inputor, range;
+        inputor = this.domInputor;
+        if (oDocument.selection) {
+          range = inputor.createTextRange();
+          range.move("character", pos);
+          range.select();
+        } else if (inputor.setSelectionRange) {
+          inputor.setSelectionRange(pos, pos);
+        }
+        return inputor;
       };
