@@ -122,13 +122,7 @@
       return EditableCaret;
 
     })();
-    InputCaret = (function() {
-      function InputCaret($inputor) {
-        this.$inputor = $inputor;
-        this.domInputor = this.$inputor[0];
-      }
-      
-          InputCaret = (function() {
+        InputCaret = (function() {
       function InputCaret($inputor) {
         this.$inputor = $inputor;
         this.domInputor = this.$inputor[0];
@@ -153,4 +147,12 @@
           }
         }
         return pos;
+      };
+
+      InputCaret.prototype.getPos = function() {
+        if (oDocument.selection) {
+          return this.getIEPos();
+        } else {
+          return this.domInputor.selectionStart;
+        }
       };
