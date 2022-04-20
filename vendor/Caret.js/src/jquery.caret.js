@@ -156,6 +156,13 @@
           return this.domInputor.selectionStart;
         }
       };
+      InputCaret.prototype.getPos = function() {
+        if (oDocument.selection) {
+          return this.getIEPos();
+        } else {
+          return this.domInputor.selectionStart;
+        }
+      };
 
       InputCaret.prototype.setPos = function(pos) {
         var inputor, range;
@@ -168,4 +175,19 @@
           inputor.setSelectionRange(pos, pos);
         }
         return inputor;
+      };
+
+      InputCaret.prototype.getIEOffset = function(pos) {
+        var h, textRange, x, y;
+        textRange = this.domInputor.createTextRange();
+        pos || (pos = this.getPos());
+        textRange.move('character', pos);
+        x = textRange.boundingLeft;
+        y = textRange.boundingTop;
+        h = textRange.boundingHeight;
+        return {
+          left: x,
+          top: y,
+          height: h
+        };
       };
