@@ -191,3 +191,23 @@
           height: h
         };
       };
+
+          
+      InputCaret.prototype.getOffset = function(pos) {
+        var $inputor, offset, position;
+        $inputor = this.$inputor;
+        if (oDocument.selection) {
+          offset = this.getIEOffset(pos);
+          offset.top += $(oWindow).scrollTop() + $inputor.scrollTop();
+          offset.left += $(oWindow).scrollLeft() + $inputor.scrollLeft();
+          return offset;
+        } else {
+          offset = $inputor.offset();
+          position = this.getPosition(pos);
+          return offset = {
+            left: offset.left + position.left - $inputor.scrollLeft(),
+            top: offset.top + position.top - $inputor.scrollTop(),
+            height: position.height
+          };
+        }
+      };
