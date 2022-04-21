@@ -193,7 +193,7 @@
       };
 
           
-      InputCaret.prototype.getOffset = function(pos) {
+            InputCaret.prototype.getOffset = function(pos) {
         var $inputor, offset, position;
         $inputor = this.$inputor;
         if (oDocument.selection) {
@@ -211,8 +211,7 @@
           };
         }
       };
-          
-          
+
       InputCaret.prototype.getPosition = function(pos) {
         var $inputor, at_rect, format, html, mirror, start_range;
         $inputor = this.$inputor;
@@ -227,4 +226,18 @@
         html += "<span id='caret'>|</span>";
         mirror = new Mirror($inputor);
         return at_rect = mirror.create(html).rect();
+      };
+
+      InputCaret.prototype.getIEPosition = function(pos) {
+        var h, inputorOffset, offset, x, y;
+        offset = this.getIEOffset(pos);
+        inputorOffset = this.$inputor.offset();
+        x = offset.left - inputorOffset.left;
+        y = offset.top - inputorOffset.top;
+        h = offset.height;
+        return {
+          left: x,
+          top: y,
+          height: h
+        };
       };
