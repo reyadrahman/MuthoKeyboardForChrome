@@ -211,3 +211,20 @@
           };
         }
       };
+          
+          
+      InputCaret.prototype.getPosition = function(pos) {
+        var $inputor, at_rect, format, html, mirror, start_range;
+        $inputor = this.$inputor;
+        format = function(value) {
+          return value.replace(/</g, '&lt').replace(/>/g, '&gt').replace(/`/g, '&#96').replace(/"/g, '&quot').replace(/\r\n|\r|\n/g, "<br />");
+        };
+        if (pos === void 0) {
+          pos = this.getPos();
+        }
+        start_range = $inputor.val().slice(0, pos);
+        html = "<span>" + format(start_range) + "</span>";
+        html += "<span id='caret'>|</span>";
+        mirror = new Mirror($inputor);
+        return at_rect = mirror.create(html).rect();
+      };
