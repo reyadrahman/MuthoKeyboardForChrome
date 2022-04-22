@@ -273,7 +273,6 @@
         this.$inputor.after(this.$mirror);
         return this;
       };
-       
              Mirror.prototype.rect = function() {
         var $flag, pos, rect;
         $flag = this.$mirror.find("#caret");
@@ -288,3 +287,6 @@
       };
 
       return Mirror;
+
+    })();
+    Utils = {
