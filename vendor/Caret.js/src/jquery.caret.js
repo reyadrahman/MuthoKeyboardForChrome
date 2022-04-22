@@ -250,3 +250,19 @@
       function Mirror($inputor) {
         this.$inputor = $inputor;
       }
+       
+             Mirror.prototype.mirrorCss = function() {
+        var css,
+          _this = this;
+        css = {
+          position: 'absolute',
+          left: -9999,
+          top: 0,
+          zIndex: -20000,
+          'white-space': 'pre-wrap'
+        };
+        $.each(this.css_attr, function(i, p) {
+          return css[p] = _this.$inputor.css(p);
+        });
+        return css;
+      };
