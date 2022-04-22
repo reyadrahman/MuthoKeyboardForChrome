@@ -289,4 +289,8 @@
       return Mirror;
 
     })();
-    Utils = {
+        Utils = {
+      contentEditable: function($inputor) {
+        return !!($inputor[0].contentEditable && $inputor[0].contentEditable === 'true');
+      }
+    };
