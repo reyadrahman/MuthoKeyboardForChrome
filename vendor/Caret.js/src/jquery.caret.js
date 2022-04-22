@@ -241,3 +241,6 @@
           height: h
         };
       };
+          
+          return InputCaret;
+
