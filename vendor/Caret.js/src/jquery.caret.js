@@ -266,3 +266,10 @@
         });
         return css;
       };
+      Mirror.prototype.create = function(html) {
+        this.$mirror = $('<div></div>');
+        this.$mirror.css(this.mirrorCss());
+        this.$mirror.html(html);
+        this.$inputor.after(this.$mirror);
+        return this;
+      };
