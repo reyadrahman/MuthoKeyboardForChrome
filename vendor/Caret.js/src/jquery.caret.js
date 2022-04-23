@@ -317,3 +317,6 @@
           offset.top += iOffset.top;
           offset.left += iOffset.left;
         }
+   return offset;
+      }
+    };
