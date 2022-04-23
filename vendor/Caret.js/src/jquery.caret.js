@@ -309,3 +309,11 @@
           return this.getPosition(pos);
         }
       },
+   offset: function(pos) {
+        var iOffset, offset;
+        offset = this.getOffset(pos);
+        if (oFrame) {
+          iOffset = $(oFrame).offset();
+          offset.top += iOffset.top;
+          offset.left += iOffset.left;
+        }
