@@ -302,3 +302,10 @@
           return this.getPos();
         }
       },
+      position: function(pos) {
+        if (oDocument.selection) {
+          return this.getIEPosition(pos);
+        } else {
+          return this.getPosition(pos);
+        }
+      },
