@@ -320,11 +320,28 @@
    return offset;
       }
     };
-   oDocument = null;
+      oDocument = null;
     oWindow = null;
     oFrame = null;
     setContextBy = function(iframe) {
       oFrame = iframe;
       oWindow = iframe.contentWindow;
       return oDocument = iframe.contentDocument || oWindow.document;
+    };
+    configure = function($dom, settings) {
+      var error, iframe;
+      if ($.isPlainObject(settings) && (iframe = settings.iframe)) {
+        $dom.data('caret-iframe', iframe);
+        return setContextBy(iframe);
+      } else if (iframe = $dom.data('caret-iframe')) {
+        return setContextBy(iframe);
+      } else {
+        oDocument = $dom[0].ownerDocument;
+        oWindow = oDocument.defaultView || oDocument.parentWindow;
+        try {
+          return oFrame = oWindow.frameElement;
+        } catch (_error) {
+          error = _error;
+        }
+      }
     };
