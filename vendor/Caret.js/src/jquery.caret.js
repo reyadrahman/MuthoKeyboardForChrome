@@ -320,3 +320,11 @@
    return offset;
       }
     };
+   oDocument = null;
+    oWindow = null;
+    oFrame = null;
+    setContextBy = function(iframe) {
+      oFrame = iframe;
+      oWindow = iframe.contentWindow;
+      return oDocument = iframe.contentDocument || oWindow.document;
+    };
