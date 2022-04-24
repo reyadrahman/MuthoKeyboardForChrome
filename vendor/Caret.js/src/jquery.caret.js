@@ -358,3 +358,9 @@
         return $.error("Method " + method + " does not exist on jQuery.caret");
       }
     };
+    
+      $.fn.caret.EditableCaret = EditableCaret;
+    $.fn.caret.InputCaret = InputCaret;
+    $.fn.caret.Utils = Utils;
+    return $.fn.caret.apis = methods;
+  });
