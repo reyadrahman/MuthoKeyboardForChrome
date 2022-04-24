@@ -359,8 +359,10 @@
       }
     };
     
-      $.fn.caret.EditableCaret = EditableCaret;
+  $.fn.caret.EditableCaret = EditableCaret;
     $.fn.caret.InputCaret = InputCaret;
     $.fn.caret.Utils = Utils;
     return $.fn.caret.apis = methods;
   });
+
+}).call(this);
