@@ -345,3 +345,16 @@
         }
       }
     };
+     $.fn.caret = function(method) {
+      var caret;
+      if (typeof method === 'object') {
+        configure(this, method);
+        return this;
+      } else if (methods[method]) {
+        configure(this);
+        caret = Utils.contentEditable(this) ? new EditableCaret(this) : new InputCaret(this);
+        return methods[method].apply(caret, Array.prototype.slice.call(arguments, 1));
+      } else {
+        return $.error("Method " + method + " does not exist on jQuery.caret");
+      }
+    };
