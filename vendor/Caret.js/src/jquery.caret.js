@@ -94,19 +94,18 @@
             left: rect.left + rect.width,
             top: rect.top
           };
-        
           clonedRange.detach();
         } else if (oDocument.selection) {
           offset = this.getOldIEOffset();
         }
-          if (offset && !oFrame) {
+        if (offset && !oFrame) {
           offset.top += $(oWindow).scrollTop();
           offset.left += $(oWindow).scrollLeft();
         }
         return offset;
       };
 
-         EditableCaret.prototype.range = function() {
+      EditableCaret.prototype.range = function() {
         var sel;
         if (!oWindow.getSelection) {
           return;
@@ -122,7 +121,7 @@
       return EditableCaret;
 
     })();
-        InputCaret = (function() {
+    InputCaret = (function() {
       function InputCaret($inputor) {
         this.$inputor = $inputor;
         this.domInputor = this.$inputor[0];
@@ -149,13 +148,6 @@
         return pos;
       };
 
-            InputCaret.prototype.getPos = function() {
-        if (oDocument.selection) {
-          return this.getIEPos();
-        } else {
-          return this.domInputor.selectionStart;
-        }
-      };
       InputCaret.prototype.getPos = function() {
         if (oDocument.selection) {
           return this.getIEPos();
@@ -192,8 +184,7 @@
         };
       };
 
-          
-            InputCaret.prototype.getOffset = function(pos) {
+      InputCaret.prototype.getOffset = function(pos) {
         var $inputor, offset, position;
         $inputor = this.$inputor;
         if (oDocument.selection) {
@@ -241,17 +232,18 @@
           height: h
         };
       };
-          
-          return InputCaret;
-      })();
-     Mirror = (function() {
+
+      return InputCaret;
+
+    })();
+    Mirror = (function() {
       Mirror.prototype.css_attr = ["overflowY", "height", "width", "paddingTop", "paddingLeft", "paddingRight", "paddingBottom", "marginTop", "marginLeft", "marginRight", "marginBottom", "fontFamily", "borderStyle", "borderWidth", "wordWrap", "fontSize", "lineHeight", "overflowX", "text-align"];
-    
+
       function Mirror($inputor) {
         this.$inputor = $inputor;
       }
-       
-             Mirror.prototype.mirrorCss = function() {
+
+      Mirror.prototype.mirrorCss = function() {
         var css,
           _this = this;
         css = {
@@ -266,6 +258,7 @@
         });
         return css;
       };
+
       Mirror.prototype.create = function(html) {
         this.$mirror = $('<div></div>');
         this.$mirror.css(this.mirrorCss());
@@ -273,7 +266,8 @@
         this.$inputor.after(this.$mirror);
         return this;
       };
-             Mirror.prototype.rect = function() {
+
+      Mirror.prototype.rect = function() {
         var $flag, pos, rect;
         $flag = this.$mirror.find("#caret");
         pos = $flag.position();
@@ -289,7 +283,7 @@
       return Mirror;
 
     })();
-        Utils = {
+    Utils = {
       contentEditable: function($inputor) {
         return !!($inputor[0].contentEditable && $inputor[0].contentEditable === 'true');
       }
@@ -309,7 +303,7 @@
           return this.getPosition(pos);
         }
       },
-   offset: function(pos) {
+      offset: function(pos) {
         var iOffset, offset;
         offset = this.getOffset(pos);
         if (oFrame) {
@@ -317,10 +311,10 @@
           offset.top += iOffset.top;
           offset.left += iOffset.left;
         }
-   return offset;
+        return offset;
       }
     };
-      oDocument = null;
+    oDocument = null;
     oWindow = null;
     oFrame = null;
     setContextBy = function(iframe) {
@@ -345,7 +339,7 @@
         }
       }
     };
-     $.fn.caret = function(method) {
+    $.fn.caret = function(method) {
       var caret;
       if (typeof method === 'object') {
         configure(this, method);
@@ -358,8 +352,7 @@
         return $.error("Method " + method + " does not exist on jQuery.caret");
       }
     };
-    
-  $.fn.caret.EditableCaret = EditableCaret;
+    $.fn.caret.EditableCaret = EditableCaret;
     $.fn.caret.InputCaret = InputCaret;
     $.fn.caret.Utils = Utils;
     return $.fn.caret.apis = methods;
