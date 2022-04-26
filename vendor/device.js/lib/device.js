@@ -18,3 +18,8 @@
     removeClass,
     userAgent;
 
+
+  // Save the previous value of the device variable.
+  previousDevice = window.device;
+
+  device = {};
