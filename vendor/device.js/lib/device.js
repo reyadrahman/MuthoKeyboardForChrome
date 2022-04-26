@@ -6,3 +6,15 @@
 
 (function() {
 
+  
+  var device,
+    previousDevice,
+    addClass,
+    documentElement,
+    find,
+    handleOrientation,
+    hasClass,
+    orientationEvent,
+    removeClass,
+    userAgent;
+
