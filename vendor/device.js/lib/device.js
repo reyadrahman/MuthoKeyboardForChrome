@@ -34,3 +34,10 @@
   // The client user agent string.
   // Lowercase, so we can use the more efficient indexOf(), instead of Regex
   userAgent = window.navigator.userAgent.toLowerCase();
+
+  // Main functions
+  // --------------
+
+  device.ios = function () {
+    return device.iphone() || device.ipod() || device.ipad();
+  };
