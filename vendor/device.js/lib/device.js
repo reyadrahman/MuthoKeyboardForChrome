@@ -19,7 +19,7 @@
     userAgent;
 
 
-  
+
   // Save the previous value of the device variable.
   previousDevice = window.device;
 
@@ -29,7 +29,8 @@
   window.device = device;
 
   // The <html> element.
-  documentElement = window.document.documentElement;// Save the previous value of the device variable.
-  previousDevice = window.device;
+  documentElement = window.document.documentElement;
 
-
+  // The client user agent string.
+  // Lowercase, so we can use the more efficient indexOf(), instead of Regex
+  userAgent = window.navigator.userAgent.toLowerCase();
