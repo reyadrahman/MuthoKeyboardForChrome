@@ -48,3 +48,11 @@
   device.ipod = function () {
     return find('ipod');
   };
+  
+  device.ipad = function () {
+    return find('ipad');
+  };
+
+  device.android = function () {
+    return !device.windows() && find('android');
+  };
