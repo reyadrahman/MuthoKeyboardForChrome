@@ -37,11 +37,14 @@
 
   // Main functions
   // --------------
-
   device.ios = function () {
     return device.iphone() || device.ipod() || device.ipad();
   };
-  
+
   device.iphone = function () {
     return !device.windows() && find('iphone');
+  };
+
+  device.ipod = function () {
+    return find('ipod');
   };
