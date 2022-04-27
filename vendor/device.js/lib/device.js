@@ -60,3 +60,7 @@
   device.androidPhone = function () {
     return device.android() && find('mobile');
   };
+  device.androidTablet = function () {
+    return device.android() && !find('mobile');
+  };
+
