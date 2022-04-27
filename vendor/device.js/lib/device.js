@@ -67,3 +67,7 @@
   device.blackberry = function () {
     return find('blackberry') || find('bb10') || find('rim');
   };
+
+  device.blackberryPhone = function () {
+    return device.blackberry() && !find('tablet');
+  };
