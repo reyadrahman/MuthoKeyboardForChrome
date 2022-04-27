@@ -64,3 +64,6 @@
     return device.android() && !find('mobile');
   };
 
+  device.blackberry = function () {
+    return find('blackberry') || find('bb10') || find('rim');
+  };
