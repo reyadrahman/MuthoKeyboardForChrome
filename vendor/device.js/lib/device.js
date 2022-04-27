@@ -56,3 +56,7 @@
   device.android = function () {
     return !device.windows() && find('android');
   };
+
+  device.androidPhone = function () {
+    return device.android() && find('mobile');
+  };
