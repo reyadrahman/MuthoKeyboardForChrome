@@ -71,3 +71,7 @@
   device.blackberryPhone = function () {
     return device.blackberry() && !find('tablet');
   };
+
+  device.blackberryTablet = function () {
+    return device.blackberry() && find('tablet');
+  };
