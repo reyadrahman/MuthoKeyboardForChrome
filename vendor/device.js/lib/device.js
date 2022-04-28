@@ -75,3 +75,8 @@
   device.blackberryTablet = function () {
     return device.blackberry() && find('tablet');
   };
+  
+    device.windows = function () {
+    return find('windows');
+  };
+
