@@ -91,3 +91,7 @@
   device.fxos = function () {
     return (find('(mobile;') || find('(tablet;')) && find('; rv:');
   };
+  
+   device.fxosPhone = function () {
+    return device.fxos() && find('mobile');
+  };
