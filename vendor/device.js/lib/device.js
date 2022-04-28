@@ -6,7 +6,6 @@
 
 (function() {
 
-  
   var device,
     previousDevice,
     addClass,
@@ -17,8 +16,6 @@
     orientationEvent,
     removeClass,
     userAgent;
-
-
 
   // Save the previous value of the device variable.
   previousDevice = window.device;
@@ -37,6 +34,7 @@
 
   // Main functions
   // --------------
+
   device.ios = function () {
     return device.iphone() || device.ipod() || device.ipad();
   };
@@ -48,7 +46,7 @@
   device.ipod = function () {
     return find('ipod');
   };
-  
+
   device.ipad = function () {
     return find('ipad');
   };
@@ -59,6 +57,51 @@
 
   device.androidPhone = function () {
     return device.android() && find('mobile');
+  };
+
+  device.androidTablet = function () {
+    return device.android() && !find('mobile');
+  };
+
+  device.blackberry = function () {
+    return find('blackberry') || find('bb10') || find('rim');
+  };
+
+  device.blackberryPhone = function () {
+    return device.blackberry() && !find('tablet');
+  };
+
+  device.blackberryTablet = function () {
+    return device.blackberry() && find('tablet');
+  };
+
+  device.windows = function () {
+    return find('windows');
+  };
+
+  device.windowsPhone = function () {
+    return device.windows() && find('phone');
+  };
+
+  device.windowsTablet = function () {
+    return device.windows() && (find('touch') && !device.windowsPhone());
+  };
+
+  device.fxos = function () {
+    return (find('(mobile;') || find('(tablet;')) && find('; rv:');
+  };
+
+  device.fxosPhone = function () {
+    return device.fxos() && find('mobile');
+  };
+
+  device.fxosTablet = function () {
+    return device.fxos() && find('tablet');
+  };
+
+  device.meego = function () {
+    return find('meego');
+  };
   };
   device.androidTablet = function () {
     return device.android() && !find('mobile');
