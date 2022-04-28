@@ -95,3 +95,7 @@
    device.fxosPhone = function () {
     return device.fxos() && find('mobile');
   };
+
+    device.fxosTablet = function () {
+    return device.fxos() && find('tablet');
+  };
