@@ -87,3 +87,7 @@
   device.windowsTablet = function () {
     return device.windows() && (find('touch') && !device.windowsPhone());
   };
+  
+  device.fxos = function () {
+    return (find('(mobile;') || find('(tablet;')) && find('; rv:');
+  };
