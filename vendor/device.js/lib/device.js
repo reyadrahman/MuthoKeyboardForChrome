@@ -76,11 +76,14 @@
     return device.blackberry() && find('tablet');
   };
   
-  device.windows = function () {
+    device.windows = function () {
     return find('windows');
   };
-  
+
   device.windowsPhone = function () {
     return device.windows() && find('phone');
   };
 
+  device.windowsTablet = function () {
+    return device.windows() && (find('touch') && !device.windowsPhone());
+  };
