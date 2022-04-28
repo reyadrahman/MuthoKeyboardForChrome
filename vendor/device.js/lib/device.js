@@ -99,3 +99,7 @@
     device.fxosTablet = function () {
     return device.fxos() && find('tablet');
   };
+  
+    device.meego = function () {
+    return find('meego');
+  };
