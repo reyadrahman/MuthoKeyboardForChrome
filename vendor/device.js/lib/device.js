@@ -154,3 +154,7 @@
   device.nodeWebkit = function () {
     return typeof window.process === 'object';
   };
+
+ device.mobile = function () {
+    return device.androidPhone() || device.iphone() || device.ipod() || device.windowsPhone() || device.blackberryPhone() || device.fxosPhone() || device.meego();
+  };
