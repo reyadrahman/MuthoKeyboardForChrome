@@ -102,50 +102,6 @@
   device.meego = function () {
     return find('meego');
   };
-  };
-  device.androidTablet = function () {
-    return device.android() && !find('mobile');
-  };
-
-  device.blackberry = function () {
-    return find('blackberry') || find('bb10') || find('rim');
-  };
-
-  device.blackberryPhone = function () {
-    return device.blackberry() && !find('tablet');
-  };
-
-  device.blackberryTablet = function () {
-    return device.blackberry() && find('tablet');
-  };
-  
-    device.windows = function () {
-    return find('windows');
-  };
-
-  device.windowsPhone = function () {
-    return device.windows() && find('phone');
-  };
-
-  device.windowsTablet = function () {
-    return device.windows() && (find('touch') && !device.windowsPhone());
-  };
-  
-  device.fxos = function () {
-    return (find('(mobile;') || find('(tablet;')) && find('; rv:');
-  };
-  
-   device.fxosPhone = function () {
-    return device.fxos() && find('mobile');
-  };
-
-    device.fxosTablet = function () {
-    return device.fxos() && find('tablet');
-  };
-  
-    device.meego = function () {
-    return find('meego');
-  };
 
   device.cordova = function () {
     return window.cordova && location.protocol === 'file:';
@@ -160,7 +116,7 @@
   };
 
   device.tablet = function () {
-    return device.ipad() q|| device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
+    return device.ipad() || device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
   };
 
   device.desktop = function () {
@@ -169,20 +125,3 @@
 
   device.television = function() {
     var i, tvString;
-
-television = [
-      "googletv",
-      "viera",
-      "smarttv",
-      "internet.tv",
-      "netcast",
-      "nettv",
-      "appletv",
-      "boxee",
-      "kylo",
-      "roku",
-      "dlnadoc",
-      "roku",
-      "pov_tv",
-      "hbbtv",
-      "ce-html"
