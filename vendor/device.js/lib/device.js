@@ -166,3 +166,7 @@
   device.desktop = function () {
     return !device.tablet() && !device.mobile();
   };
+
+  device.television = function() {
+    var i, tvString;
+
