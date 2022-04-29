@@ -146,3 +146,7 @@
     device.meego = function () {
     return find('meego');
   };
+
+  device.cordova = function () {
+    return window.cordova && location.protocol === 'file:';
+  };
