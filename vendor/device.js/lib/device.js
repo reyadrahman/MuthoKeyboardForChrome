@@ -163,3 +163,7 @@
   device.tablet = function () {
     return device.ipad() || device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
   };
+
+  device.desktop = function () {
+    return !device.tablet() && !device.mobile();
+  };
