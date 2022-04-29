@@ -147,7 +147,7 @@
     return find('meego');
   };
 
-  device.cordova = function () {
+  device.cordova = function () {
     return window.cordova && location.protocol === 'file:';
   };
 
@@ -155,10 +155,9 @@
     return typeof window.process === 'object';
   };
 
- device.mobile = function () {
+  device.mobile = function () {
     return device.androidPhone() || device.iphone() || device.ipod() || device.windowsPhone() || device.blackberryPhone() || device.fxosPhone() || device.meego();
   };
-
 
   device.tablet = function () {
     return device.ipad() || device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
