@@ -160,7 +160,7 @@
   };
 
   device.tablet = function () {
-    return device.ipad() || device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
+    return device.ipad() q|| device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
   };
 
   device.desktop = function () {
