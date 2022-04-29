@@ -158,3 +158,8 @@
  device.mobile = function () {
     return device.androidPhone() || device.iphone() || device.ipod() || device.windowsPhone() || device.blackberryPhone() || device.fxosPhone() || device.meego();
   };
+
+
+  device.tablet = function () {
+    return device.ipad() || device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
+  };
