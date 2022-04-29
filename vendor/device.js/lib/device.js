@@ -177,3 +177,12 @@ television = [
       "internet.tv",
       "netcast",
       "nettv",
+      "appletv",
+      "boxee",
+      "kylo",
+      "roku",
+      "dlnadoc",
+      "roku",
+      "pov_tv",
+      "hbbtv",
+      "ce-html"
