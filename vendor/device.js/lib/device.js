@@ -170,3 +170,10 @@
   device.television = function() {
     var i, tvString;
 
+television = [
+      "googletv",
+      "viera",
+      "smarttv",
+      "internet.tv",
+      "netcast",
+      "nettv",
