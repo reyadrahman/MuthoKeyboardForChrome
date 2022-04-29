@@ -150,3 +150,7 @@
   device.cordova = function () {
     return window.cordova && location.protocol === 'file:';
   };
+
+  device.nodeWebkit = function () {
+    return typeof window.process === 'object';
+  };
