@@ -125,3 +125,12 @@
 
   device.television = function() {
     var i, tvString;
+
+    
+  // Private Utility Functions
+  // -------------------------
+
+  // Simple UA string search
+  find = function (needle) {
+    return userAgent.indexOf(needle) !== -1;
+  };
