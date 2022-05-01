@@ -141,3 +141,12 @@
     regex = new RegExp(className, 'i');
     return documentElement.className.match(regex);
   };
+    
+  // Add one or more CSS classes to the <html> element.
+  addClass = function (className) {
+    var currentClassNames = null;
+    if (!hasClass(className)) {
+      currentClassNames = documentElement.className.replace(/^\s+|\s+$/g, '');
+      documentElement.className = currentClassNames + " " + className;
+    }
+  };
