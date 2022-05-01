@@ -158,3 +158,8 @@
       documentElement.className = documentElement.className.replace(" " + className, "");
     }
   };
+
+   // HTML Element Handling
+  // ---------------------
+
+  // Insert the appropriate CSS class based on the _user_agent.
