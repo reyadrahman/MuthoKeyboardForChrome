@@ -163,3 +163,12 @@
   // ---------------------
 
   // Insert the appropriate CSS class based on the _user_agent.
+    
+     if (device.ios()) {
+    if (device.ipad()) {
+      addClass("ios ipad tablet");
+    } else if (device.iphone()) {
+      addClass("ios iphone mobile");
+    } else if (device.ipod()) {
+      addClass("ios ipod mobile");
+    } 
