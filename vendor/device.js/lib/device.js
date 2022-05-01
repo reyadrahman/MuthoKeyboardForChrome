@@ -172,3 +172,9 @@
     } else if (device.ipod()) {
       addClass("ios ipod mobile");
     } 
+    } else if (device.android()) {
+    if (device.androidTablet()) {
+      addClass("android tablet");
+    } else {
+      addClass("android mobile");
+    }
