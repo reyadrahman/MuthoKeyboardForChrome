@@ -302,7 +302,10 @@
       addClass("android tablet");
     } else {
       addClass("android mobile");
-    } else if (device.blackberry()) {
+    }
+   } else if (device.blackberry()) {
     if (device.blackberryTablet()) {
       addClass("blackberry tablet");
-    } 
+    } else {
+      addClass("blackberry mobile");
+    }
