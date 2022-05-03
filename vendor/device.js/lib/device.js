@@ -183,3 +183,11 @@
     } else {
       addClass("blackberry mobile");
     }
+   } else if (device.windows()) {
+    if (device.windowsTablet()) {
+      addClass("windows tablet");
+    } else if (device.windowsPhone()) {
+      addClass("windows mobile");
+    } else {
+      addClass("desktop");
+    }
