@@ -191,3 +191,9 @@
     } else {
       addClass("desktop");
     }
+     } else if (device.fxos()) {
+    if (device.fxosTablet()) {
+      addClass("fxos tablet");
+    } else {
+      addClass("fxos mobile");
+    }
