@@ -183,7 +183,7 @@
     } else {
       addClass("blackberry mobile");
     }
-   } else if (device.windows()) {
+  } else if (device.windows()) {
     if (device.windowsTablet()) {
       addClass("windows tablet");
     } else if (device.windowsPhone()) {
@@ -191,15 +191,18 @@
     } else {
       addClass("desktop");
     }
-     } else if (device.fxos()) {
-    if (device.fxosTablet()) {
-      addClass("fxos tablet");
-    } else {
-      addClass("fxos mobile");
-    }
   } else if (device.fxos()) {
     if (device.fxosTablet()) {
       addClass("fxos tablet");
     } else {
       addClass("fxos mobile");
     }
+  } else if (device.meego()) {
+    addClass("meego mobile");
+  } else if (device.nodeWebkit()) {
+    addClass("node-webkit");
+  } else if (device.television()) {
+    addClass("television");
+  } else if (device.desktop()) {
+    addClass("desktop");
+  }
