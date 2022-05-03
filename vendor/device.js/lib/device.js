@@ -197,3 +197,9 @@
     } else {
       addClass("fxos mobile");
     }
+  } else if (device.fxos()) {
+    if (device.fxosTablet()) {
+      addClass("fxos tablet");
+    } else {
+      addClass("fxos mobile");
+    }
