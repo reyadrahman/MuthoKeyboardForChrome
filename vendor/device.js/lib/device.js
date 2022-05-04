@@ -434,3 +434,12 @@
     }
     return;
   };
+    
+    // Detect whether device supports orientationchange event,
+  // otherwise fall back to the resize event.
+  if (Object.prototype.hasOwnProperty.call(window, "onorientationchange")) {
+    orientationEvent = "orientationchange";
+  } else {
+    orientationEvent = "resize";
+  }
+
