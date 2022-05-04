@@ -419,3 +419,18 @@
     addClass("cordova");
   }
     
+    
+    // Orientation Handling
+  // --------------------
+
+  // Handle device orientation changes.
+  handleOrientation = function () {
+    if (device.landscape()) {
+      removeClass("portrait");
+      addClass("landscape");
+    } else {
+      removeClass("landscape");
+      addClass("portrait");
+    }
+    return;
+  };
