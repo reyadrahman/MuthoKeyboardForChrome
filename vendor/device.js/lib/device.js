@@ -451,3 +451,5 @@
   } else {
     window[orientationEvent] = handleOrientation;
   }
+
+      handleOrientation();
