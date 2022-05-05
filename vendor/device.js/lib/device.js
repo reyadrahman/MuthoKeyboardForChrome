@@ -443,3 +443,11 @@
     orientationEvent = "resize";
   }
 
+// Listen for changes in orientation.
+  if (window.addEventListener) {
+    window.addEventListener(orientationEvent, handleOrientation, false);
+  } else if (window.attachEvent) {
+    window.attachEvent(orientationEvent, handleOrientation);
+  } else {
+    window[orientationEvent] = handleOrientation;
+  }
