@@ -464,3 +464,6 @@
   } else {
     window.device = device;
   } 
+    
+   }).call(this);
+ 
