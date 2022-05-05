@@ -453,3 +453,14 @@
   }
 
       handleOrientation();
+    
+   
+  if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+    define(function() {
+      return device;
+    });
+  } else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = device;
+  } else {
+    window.device = device;
+  } 
