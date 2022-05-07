@@ -45,4 +45,4 @@
 	
 	
 var arr = [];
-
+var slice = arr.slice;
