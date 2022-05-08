@@ -50,3 +50,4 @@ var concat = arr.concat;
 var push = arr.push;
 var indexOf = arr.indexOf;
 var class2type = {};
+var toString = class2type.toString;
