@@ -47,3 +47,4 @@
 var arr = [];
 var slice = arr.slice;
 var concat = arr.concat;	
+var push = arr.push;
