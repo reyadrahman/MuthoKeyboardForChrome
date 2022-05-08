@@ -52,4 +52,5 @@ var indexOf = arr.indexOf;
 var class2type = {};
 var toString = class2type.toString;
 var hasOwn = class2type.hasOwnProperty;
+var support = {};
 
