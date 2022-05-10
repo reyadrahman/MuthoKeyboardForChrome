@@ -79,3 +79,7 @@ var
 	fcamelCase = function( all, letter ) {
 		return letter.toUpperCase();
 	};
+	
+	jQuery.fn = jQuery.prototype = {
+	// The current version of jQuery being used
+	jquery: version,
