@@ -42,23 +42,33 @@
 // the stack via arguments.caller.callee and Firefox dies if
 // you try to trace through "use strict" call chains. (#13335)
 //
-	
-	
+
 var arr = [];
+
 var slice = arr.slice;
-var concat = arr.concat;	
+
+var concat = arr.concat;
+
 var push = arr.push;
+
 var indexOf = arr.indexOf;
+
 var class2type = {};
+
 var toString = class2type.toString;
+
 var hasOwn = class2type.hasOwnProperty;
+
 var support = {};
+
+
 
 var
 	// Use the correct document accordingly with window argument (sandbox)
 	document = window.document,
 
 	version = "2.1.4",
+
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
 		// The jQuery object is actually just the init constructor 'enhanced'
@@ -73,13 +83,12 @@ var
 	// Matches dashed string for camelizing
 	rmsPrefix = /^-ms-/,
 	rdashAlpha = /-([\da-z])/gi,
-    
-    
+
 	// Used by jQuery.camelCase as callback to replace()
 	fcamelCase = function( all, letter ) {
 		return letter.toUpperCase();
 	};
-	
-	jQuery.fn = jQuery.prototype = {
+
+jQuery.fn = jQuery.prototype = {
 	// The current version of jQuery being used
 	jquery: version,
