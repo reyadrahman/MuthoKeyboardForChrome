@@ -96,3 +96,5 @@ jQuery.fn = jQuery.prototype = {
 
 	// Start with an empty selector
 	selector: "",
+	// The default length of a jQuery object is 0
+	length: 0,
