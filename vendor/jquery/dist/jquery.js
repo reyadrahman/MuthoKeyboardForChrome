@@ -111,3 +111,6 @@ jQuery.fn = jQuery.prototype = {
 			// Return all the elements in a clean array
 			slice.call( this );
 	},
+        // Take an array of elements and push it onto the stack
+	// (returning the new matched element set)
+	pushStack: function( elems ) {
