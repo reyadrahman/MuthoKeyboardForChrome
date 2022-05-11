@@ -93,3 +93,6 @@ jQuery.fn = jQuery.prototype = {
 	// The current version of jQuery being used
 	jquery: version,
         constructor: jQuery,
+
+	// Start with an empty selector
+	selector: "",
