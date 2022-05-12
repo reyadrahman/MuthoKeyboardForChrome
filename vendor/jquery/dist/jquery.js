@@ -114,3 +114,7 @@ jQuery.fn = jQuery.prototype = {
         // Take an array of elements and push it onto the stack
 	// (returning the new matched element set)
 	pushStack: function( elems ) {
+		
+				
+	// Build a new jQuery matched element set
+	var ret = jQuery.merge( this.constructor(), elems );
