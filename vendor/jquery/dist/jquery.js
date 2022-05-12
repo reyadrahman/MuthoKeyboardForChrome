@@ -123,3 +123,6 @@ jQuery.fn = jQuery.prototype = {
 		ret.prevObject = this;
 		ret.context = this.context;
 
+		// Return the newly-formed element set
+		return ret;
+	},
