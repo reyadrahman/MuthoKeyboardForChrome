@@ -212,3 +212,7 @@ jQuery.fn = jQuery.prototype = {
 			return callback.call( elem, i, elem );
 		}));
 	},
+	
+	slice: function() {
+		return this.pushStack( slice.apply( this, arguments ) );
+	},
