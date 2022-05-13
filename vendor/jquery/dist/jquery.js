@@ -219,4 +219,7 @@ jQuery.fn = jQuery.prototype = {
 	first: function() {
 		return this.eq( 0 );
 	},
-	
+	last: function() {
+		return this.eq( -1 );
+	},
+
