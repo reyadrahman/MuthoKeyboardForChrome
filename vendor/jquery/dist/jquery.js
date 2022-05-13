@@ -201,6 +201,9 @@ jQuery.fn = jQuery.prototype = {
 		// Return the newly-formed element set
 		return ret;
 	},
-// Execute a callback for every element in the matched set.
+        // Execute a callback for every element in the matched set.
 	// (You can seed the arguments with an array of args, but this is
 	// only used internally.)
+        each: function( callback, args ) {
+		return jQuery.each( this, callback, args );
+	},
