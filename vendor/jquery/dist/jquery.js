@@ -207,3 +207,8 @@ jQuery.fn = jQuery.prototype = {
         each: function( callback, args ) {
 		return jQuery.each( this, callback, args );
 	},
+	map: function( callback ) {
+		return this.pushStack( jQuery.map(this, function( elem, i ) {
+			return callback.call( elem, i, elem );
+		}));
+	},
