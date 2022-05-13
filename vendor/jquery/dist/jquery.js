@@ -216,3 +216,7 @@ jQuery.fn = jQuery.prototype = {
 	slice: function() {
 		return this.pushStack( slice.apply( this, arguments ) );
 	},
+	first: function() {
+		return this.eq( 0 );
+	},
+	
