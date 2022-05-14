@@ -241,3 +241,10 @@ jQuery.fn = jQuery.prototype = {
 };
 
 	
+
+jQuery.extend = jQuery.fn.extend = function() {
+	var options, name, src, copy, copyIsArray, clone,
+		target = arguments[0] || {},
+		i = 1,
+		length = arguments.length,
+		deep = false;
