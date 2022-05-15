@@ -396,3 +396,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		target = arguments[ i ] || {};
 		i++;
 	}
+	// Handle case when target is a string or something (possible in deep copy)
+	if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
+		target = {};
+	}
