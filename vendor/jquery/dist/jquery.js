@@ -400,3 +400,9 @@ jQuery.extend = jQuery.fn.extend = function() {
 	if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
 		target = {};
 	}
+
+	// Extend jQuery itself if only one argument is passed
+	if ( i === length ) {
+		target = this;
+		i--;
+	}
