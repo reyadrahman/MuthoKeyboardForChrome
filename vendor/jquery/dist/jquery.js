@@ -392,3 +392,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 	       if ( typeof target === "boolean" ) {
 		deep = target;
 
+		// Skip the boolean and the target
+		target = arguments[ i ] || {};
+		i++;
+	}
