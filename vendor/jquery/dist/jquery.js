@@ -416,5 +416,5 @@ jQuery.extend = jQuery.fn.extend = function() {
 		return jQuery.type(obj) === "function";
 	},
 
-
+        isArray: Array.isArray,
 			
