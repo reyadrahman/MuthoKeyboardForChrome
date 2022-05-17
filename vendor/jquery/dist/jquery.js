@@ -408,4 +408,13 @@ jQuery.extend = jQuery.fn.extend = function() {
 	error: function( msg ) {
 		throw new Error( msg );
 	},
-		
+	
+	
+	noop: function() {},
+
+	isFunction: function( obj ) {
+		return jQuery.type(obj) === "function";
+	},
+
+
+			
