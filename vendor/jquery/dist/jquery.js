@@ -448,3 +448,13 @@ jQuery.extend = jQuery.fn.extend = function() {
 		// |obj| is a plain object, created by {} or constructed with new Object
 		return true;
 	},
+
+			
+	
+	isEmptyObject: function( obj ) {
+		var name;
+		for ( name in obj ) {
+			return false;
+		}
+		return true;
+	},
