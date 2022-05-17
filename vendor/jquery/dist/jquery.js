@@ -418,3 +418,6 @@ jQuery.extend = jQuery.fn.extend = function() {
 
         isArray: Array.isArray,
 			
+        isWindow: function( obj ) {
+		return obj != null && obj === obj.window;
+	},
