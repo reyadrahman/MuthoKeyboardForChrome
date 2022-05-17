@@ -395,3 +395,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 				if ( target === copy ) {
 					continue;
 				}
+				// Return the modified object
+	          return target;
+             };
+				
