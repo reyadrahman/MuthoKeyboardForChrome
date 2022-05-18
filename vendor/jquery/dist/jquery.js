@@ -386,3 +386,10 @@ jQuery.extend({
 
 		return obj;
 	},
+
+	// Support: Android<4.1
+	trim: function( text ) {
+		return text == null ?
+			"" :
+			( text + "" ).replace( rtrim, "" );
+	},
