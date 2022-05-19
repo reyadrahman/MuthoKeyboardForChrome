@@ -411,3 +411,7 @@ jQuery.extend({
 
 		return ret;
 	},
+
+		inArray: function( elem, arr, i ) {
+		return arr == null ? -1 : indexOf.call( arr, elem, i );
+	},
