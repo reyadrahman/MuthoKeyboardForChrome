@@ -305,8 +305,8 @@ jQuery.extend({
 		return typeof obj === "object" || typeof obj === "function" ?
 			class2type[ toString.call(obj) ] || "object" :
 			typeof obj;
-	}
-	
+	},
+
 	// Evaluates a script in a global context
 	globalEval: function( code ) {
 		var script,
@@ -329,12 +329,16 @@ jQuery.extend({
 			}
 		}
 	},
-		
+
 	// Convert dashed to camelCase; used by the css and data modules
 	// Support: IE9-11+
 	// Microsoft forgot to hump their vendor prefix (#9572)
 	camelCase: function( string ) {
 		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
+	},
+
+	nodeName: function( elem, name ) {
+		return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 	},
 
 	// args is for internal usage only
@@ -363,7 +367,7 @@ jQuery.extend({
 				}
 			}
 
-	// A special, fast, case for the most common use of each
+		// A special, fast, case for the most common use of each
 		} else {
 			if ( isArray ) {
 				for ( ; i < length; i++ ) {
@@ -394,7 +398,7 @@ jQuery.extend({
 			( text + "" ).replace( rtrim, "" );
 	},
 
-			// results is for internal usage only
+	// results is for internal usage only
 	makeArray: function( arr, results ) {
 		var ret = results || [];
 
@@ -412,11 +416,10 @@ jQuery.extend({
 		return ret;
 	},
 
-		inArray: function( elem, arr, i ) {
+	inArray: function( elem, arr, i ) {
 		return arr == null ? -1 : indexOf.call( arr, elem, i );
 	},
-		
-		
+
 	merge: function( first, second ) {
 		var len = +second.length,
 			j = 0,
@@ -431,3 +434,21 @@ jQuery.extend({
 		return first;
 	},
 
+	grep: function( elems, callback, invert ) {
+		var callbackInverse,
+			matches = [],
+			i = 0,
+			length = elems.length,
+			callbackExpect = !invert;
+
+		// Go through the array, only saving the items
+		// that pass the validator function
+		for ( ; i < length; i++ ) {
+			callbackInverse = !callback( elems[ i ], i );
+			if ( callbackInverse !== callbackExpect ) {
+				matches.push( elems[ i ] );
+			}
+		}
+
+		return matches;
+	},
