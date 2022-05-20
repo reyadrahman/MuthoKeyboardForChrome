@@ -874,3 +874,10 @@ jQuery.extend({
 
 		return matches;
 	
+// arg is for internal usage only
+	map: function( elems, callback, arg ) {
+		var value,
+			i = 0,
+			length = elems.length,
+			isArray = isArraylike( elems ),
+			ret = [];
