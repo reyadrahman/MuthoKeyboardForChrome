@@ -499,4 +499,9 @@ jQuery.extend({
 			context = fn;
 			fn = tmp;
 		}
+		// Quick check to determine if target is callable, in the spec
+		// this throws a TypeError, but we will just return undefined.
+		if ( !jQuery.isFunction( fn ) ) {
+			return undefined;
+		}
 
