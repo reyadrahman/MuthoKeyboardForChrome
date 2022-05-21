@@ -522,3 +522,4 @@ jQuery.extend({
 
 		return proxy;
 	},
+        now: Date.now,
