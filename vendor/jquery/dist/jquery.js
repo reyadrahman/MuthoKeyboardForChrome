@@ -470,8 +470,8 @@ jQuery.extend({
 					ret.push( value );
 				}
 			}
-			
-			// Go through every key on the object,
+
+		// Go through every key on the object,
 		} else {
 			for ( i in elems ) {
 				value = callback( elems[ i ], i, arg );
@@ -481,13 +481,13 @@ jQuery.extend({
 				}
 			}
 		}
-	// Flatten any nested arrays
+
+		// Flatten any nested arrays
 		return concat.apply( [], ret );
 	},
-	
+
 	// A global GUID counter for objects
 	guid: 1,
-
 
 	// Bind a function to a context, optionally partially applying any
 	// arguments.
@@ -498,11 +498,6 @@ jQuery.extend({
 			tmp = fn[ context ];
 			context = fn;
 			fn = tmp;
-		}
-		// Quick check to determine if target is callable, in the spec
-		// this throws a TypeError, but we will just return undefined.
-		if ( !jQuery.isFunction( fn ) ) {
-			return undefined;
 		}
 
 		// Quick check to determine if target is callable, in the spec
@@ -522,12 +517,15 @@ jQuery.extend({
 
 		return proxy;
 	},
-        now: Date.now,
+
+	now: Date.now,
+
 	// jQuery.support is not used in Core but other projects attach their
 	// properties to it so it needs to exist.
 	support: support
-        });
-        // Populate the class2type map
-        jQuery.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) {
+});
+
+// Populate the class2type map
+jQuery.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) {
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
-        });
+});
