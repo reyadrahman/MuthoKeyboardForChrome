@@ -470,3 +470,14 @@ jQuery.extend({
 					ret.push( value );
 				}
 			}
+			
+			// Go through every key on the object,
+		} else {
+			for ( i in elems ) {
+				value = callback( elems[ i ], i, arg );
+
+				if ( value != null ) {
+					ret.push( value );
+				}
+			}
+		}
