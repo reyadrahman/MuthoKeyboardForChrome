@@ -481,3 +481,6 @@ jQuery.extend({
 				}
 			}
 		}
+	// Flatten any nested arrays
+		return concat.apply( [], ret );
+	},
