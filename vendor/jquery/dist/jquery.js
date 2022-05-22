@@ -553,3 +553,5 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object Error".spli
 	return type === "array" || length === 0 ||
 		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
 }
+
+	var Sizzle =
