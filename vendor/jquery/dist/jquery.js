@@ -566,3 +566,15 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object Error".spli
  * Date: 2014-12-16
  */
 (function( window ) {
+	
+	var i,
+	support,
+	Expr,
+	getText,
+	isXML,
+	tokenize,
+	compile,
+	select,
+	outermostContext,
+	sortInput,
+	hasDuplicate,
