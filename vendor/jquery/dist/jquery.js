@@ -530,9 +530,7 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object Error".spli
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 });
 
-	
-	function isArraylike( obj ) {
-		
+function isArraylike( obj ) {
 
 	// Support: iOS 8.2 (not reproducible in simulator)
 	// `in` check used to prevent JIT error (gh-2145)
@@ -545,7 +543,6 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object Error".spli
 		return false;
 	}
 
-
 	if ( obj.nodeType === 1 && length ) {
 		return true;
 	}
@@ -553,8 +550,7 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object Error".spli
 	return type === "array" || length === 0 ||
 		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
 }
-
-	var Sizzle =
+var Sizzle =
 /*!
  * Sizzle CSS Selector Engine v2.2.0-pre
  * http://sizzlejs.com/
@@ -566,8 +562,8 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object Error".spli
  * Date: 2014-12-16
  */
 (function( window ) {
-	
-	var i,
+
+var i,
 	support,
 	Expr,
 	getText,
