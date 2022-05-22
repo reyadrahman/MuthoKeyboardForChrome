@@ -545,3 +545,11 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object Error".spli
 		return false;
 	}
 
+
+	if ( obj.nodeType === 1 && length ) {
+		return true;
+	}
+
+	return type === "array" || length === 0 ||
+		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
+}
