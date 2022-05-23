@@ -597,3 +597,7 @@ var i,
 		}
 		return 0;
 	},
+    
+    	// General-purpose constants
+	MAX_NEGATIVE = 1 << 31,
+
