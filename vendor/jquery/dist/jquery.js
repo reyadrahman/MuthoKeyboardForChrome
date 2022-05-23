@@ -574,7 +574,8 @@ var i,
 	outermostContext,
 	sortInput,
 	hasDuplicate,
-// Local document vars
+
+	// Local document vars
 	setDocument,
 	document,
 	docElem,
@@ -583,7 +584,8 @@ var i,
 	rbuggyMatches,
 	matches,
 	contains,
-// Instance-specific data
+
+	// Instance-specific data
 	expando = "sizzle" + 1 * new Date(),
 	preferredDoc = window.document,
 	dirruns = 0,
@@ -597,11 +599,11 @@ var i,
 		}
 		return 0;
 	},
-    
-    	// General-purpose constants
+
+	// General-purpose constants
 	MAX_NEGATIVE = 1 << 31,
 
-// Instance methods
+	// Instance methods
 	hasOwn = ({}).hasOwnProperty,
 	arr = [],
 	pop = arr.pop,
@@ -620,4 +622,5 @@ var i,
 		}
 		return -1;
 	},
-booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
+
+	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
