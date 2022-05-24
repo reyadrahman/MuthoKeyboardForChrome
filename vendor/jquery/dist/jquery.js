@@ -631,3 +631,5 @@ var i,
 	// Whitespace characters http://www.w3.org/TR/css3-selectors/#whitespace
     whitespace = "[\\x20\\t\\r\\n\\f]",
     
+    // http://www.w3.org/TR/css3-syntax/#characters
+	characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
