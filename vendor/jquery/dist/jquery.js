@@ -624,3 +624,8 @@ var i,
 	},
 
 	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
+
+    
+    // Regular expressions
+
+	// Whitespace characters http://www.w3.org/TR/css3-selectors/#whitespace
