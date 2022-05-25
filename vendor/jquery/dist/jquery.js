@@ -682,3 +682,6 @@ var i,
 	rheader = /^h\d$/i,
     
 	rnative = /^[^{]+\{\s*\[native \w/,
+    
+    	// Easily-parseable/retrievable ID or TAG or CLASS selectors
+	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
