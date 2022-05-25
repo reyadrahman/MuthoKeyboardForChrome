@@ -680,3 +680,5 @@ var i,
 
     	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
+    
+	rnative = /^[^{]+\{\s*\[native \w/,
