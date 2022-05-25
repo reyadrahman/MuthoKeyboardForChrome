@@ -677,3 +677,6 @@ var i,
 		"needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
 			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 	},
+
+    	rinputs = /^(?:input|select|textarea|button)$/i,
+	rheader = /^h\d$/i,
