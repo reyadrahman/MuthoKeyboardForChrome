@@ -685,3 +685,6 @@ var i,
     
     	// Easily-parseable/retrievable ID or TAG or CLASS selectors
 	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
+    
+    	rsibling = /[+~]/,
+	rescape = /'|\\/g,
