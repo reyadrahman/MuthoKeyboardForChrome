@@ -625,18 +625,18 @@ var i,
 
 	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
 
-    
-    // Regular expressions
+	// Regular expressions
 
 	// Whitespace characters http://www.w3.org/TR/css3-selectors/#whitespace
-    whitespace = "[\\x20\\t\\r\\n\\f]",
-    
-    // http://www.w3.org/TR/css3-syntax/#characters
+	whitespace = "[\\x20\\t\\r\\n\\f]",
+	// http://www.w3.org/TR/css3-syntax/#characters
 	characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
+
 	// Loosely modeled on CSS identifier characters
 	// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
 	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
+
 	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
 	attributes = "\\[" + whitespace + "*(" + characterEncoding + ")(?:" + whitespace +
 		// Operator (capture 2)
@@ -644,21 +644,26 @@ var i,
 		// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
 		"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
 		"*\\]",
-    	pseudos = ":(" + characterEncoding + ")(?:\\((" +
+
+	pseudos = ":(" + characterEncoding + ")(?:\\((" +
 		// To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
 		// 1. quoted (capture 3; capture 4 or capture 5)
+		"('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|" +
+		// 2. simple (capture 6)
+		"((?:\\\\.|[^\\\\()[\\]]|" + attributes + ")*)|" +
+		// 3. anything else (capture 2)
+		".*" +
+		")\\)|)",
+
 	// Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
-    
-    rwhitespace = new RegExp( whitespace + "+", "g" ),
+	rwhitespace = new RegExp( whitespace + "+", "g" ),
 	rtrim = new RegExp( "^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$", "g" ),
-    
-    	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
+
+	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
 	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
 
-
 	rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
-    
-    
+
 	rpseudo = new RegExp( pseudos ),
 	ridentifier = new RegExp( "^" + identifier + "$" ),
 
@@ -678,16 +683,17 @@ var i,
 			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 	},
 
-    	rinputs = /^(?:input|select|textarea|button)$/i,
+	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
-    
+
 	rnative = /^[^{]+\{\s*\[native \w/,
-    
-    	// Easily-parseable/retrievable ID or TAG or CLASS selectors
+
+	// Easily-parseable/retrievable ID or TAG or CLASS selectors
 	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
-    
-    	rsibling = /[+~]/,
+
+	rsibling = /[+~]/,
 	rescape = /'|\\/g,
+
 	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
 	funescape = function( _, escaped, escapedWhitespace ) {
@@ -703,15 +709,14 @@ var i,
 				// Supplemental Plane codepoint (surrogate pair)
 				String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
 	},
-    
-    	// Used for iframes
+
+	// Used for iframes
 	// See setDocument()
 	// Removing the function wrapper causes a "Permission Denied"
 	// error in IE
 	unloadHandler = function() {
 		setDocument();
 	};
-
 
 // Optimize for push.apply( _, NodeList )
 try {
@@ -741,25 +746,6 @@ try {
 		}
 	};
 }
-
-function Sizzle( selector, context, results, seed ) {
-	var match, elem, m, nodeType,
-		// QSA vars
-		i, groups, old, nid, newContext, newSelector;
-
-	if ( ( context ? context.ownerDocument || context : preferredDoc ) !== document ) {
-		setDocument( context );
-	}
-
-	context = context || document;
-	results = results || [];
-	nodeType = context.nodeType;
-
-	if ( typeof selector !== "string" || !selector ||
-		nodeType !== 1 && nodeType !== 9 && nodeType !== 11 ) {
-
-		return results;
-	}
 
 function Sizzle( selector, context, results, seed ) {
 	var match, elem, m, nodeType,
