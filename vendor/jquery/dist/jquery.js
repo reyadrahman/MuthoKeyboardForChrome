@@ -835,3 +835,22 @@ function Sizzle( selector, context, results, seed ) {
 				newContext = rsibling.test( selector ) && testContext( context.parentNode ) || context;
 				newSelector = groups.join(",");
 			}
+			
+			
+
+			if ( newSelector ) {
+				try {
+					push.apply( results,
+						newContext.querySelectorAll( newSelector )
+					);
+					return results;
+				} catch(qsaError) {
+				} finally {
+					if ( !old ) {
+						context.removeAttribute("id");
+					}
+				}
+			}
+		}
+	}
+
