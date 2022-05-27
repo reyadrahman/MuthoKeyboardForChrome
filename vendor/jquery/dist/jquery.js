@@ -854,3 +854,7 @@ function Sizzle( selector, context, results, seed ) {
 		}
 	}
 
+
+	// All others
+	return select( selector.replace( rtrim, "$1" ), context, results, seed );
+}
