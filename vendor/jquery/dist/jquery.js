@@ -879,3 +879,12 @@ function createCache() {
 	}
 	return cache;
 }
+
+	/**
+ * Mark a function for special use by Sizzle
+ * @param {Function} fn The function to mark
+ */
+function markFunction( fn ) {
+	fn[ expando ] = true;
+	return fn;
+}
