@@ -1145,3 +1145,11 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 			return results;
 		};
+	
+	
+	// Class
+	Expr.find["CLASS"] = support.getElementsByClassName && function( className, context ) {
+		if ( documentIsHTML ) {
+			return context.getElementsByClassName( className );
+		}
+	};
