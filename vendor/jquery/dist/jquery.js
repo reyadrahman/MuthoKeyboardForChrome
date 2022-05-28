@@ -977,3 +977,16 @@ function createInputPseudo( type ) {
 		return name === "input" && elem.type === type;
 	};
 }
+
+	
+	
+/**
+ * Returns a function to use in pseudos for buttons
+ * @param {String} type
+ */
+function createButtonPseudo( type ) {
+	return function( elem ) {
+		var name = elem.nodeName.toLowerCase();
+		return (name === "input" || name === "button") && elem.type === type;
+	};
+}
