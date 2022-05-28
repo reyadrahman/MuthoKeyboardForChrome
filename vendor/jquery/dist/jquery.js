@@ -1071,3 +1071,18 @@ setDocument = Sizzle.setDocument = function( node ) {
 			parent.attachEvent( "onunload", unloadHandler );
 		}
 	}
+	
+		/* Support tests
+	---------------------------------------------------------------------- */
+	documentIsHTML = !isXML( doc );
+
+	/* Attributes
+	---------------------------------------------------------------------- */
+
+	// Support: IE<8
+	// Verify that getAttribute really returns attributes and not properties
+	// (excepting IE8 booleans)
+	support.attributes = assert(function( div ) {
+		div.className = "i";
+		return !div.getAttribute("className");
+	});
