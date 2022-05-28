@@ -1086,3 +1086,12 @@ setDocument = Sizzle.setDocument = function( node ) {
 		div.className = "i";
 		return !div.getAttribute("className");
 	});
+
+		/* getElement(s)By*
+	---------------------------------------------------------------------- */
+
+	// Check if getElementsByTagName("*") returns only elements
+	support.getElementsByTagName = assert(function( div ) {
+		div.appendChild( doc.createComment("") );
+		return !div.getElementsByTagName("*").length;
+	});
