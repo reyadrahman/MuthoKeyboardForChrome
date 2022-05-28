@@ -795,7 +795,7 @@ function Sizzle( selector, context, results, seed ) {
 					}
 				}
 
-				// Speed-up: Sizzle("TAG")
+			// Speed-up: Sizzle("TAG")
 			} else if ( match[2] ) {
 				push.apply( results, context.getElementsByTagName( selector ) );
 				return results;
@@ -806,7 +806,6 @@ function Sizzle( selector, context, results, seed ) {
 				return results;
 			}
 		}
-
 
 		// QSA path
 		if ( support.qsa && (!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
@@ -835,8 +834,6 @@ function Sizzle( selector, context, results, seed ) {
 				newContext = rsibling.test( selector ) && testContext( context.parentNode ) || context;
 				newSelector = groups.join(",");
 			}
-			
-			
 
 			if ( newSelector ) {
 				try {
@@ -854,12 +851,10 @@ function Sizzle( selector, context, results, seed ) {
 		}
 	}
 
-
 	// All others
 	return select( selector.replace( rtrim, "$1" ), context, results, seed );
 }
-	
-	
+
 /**
  * Create key-value caches of limited size
  * @returns {Function(string, Object)} Returns the Object data after storing it on itself with
@@ -880,7 +875,7 @@ function createCache() {
 	return cache;
 }
 
-	/**
+/**
  * Mark a function for special use by Sizzle
  * @param {Function} fn The function to mark
  */
@@ -889,8 +884,6 @@ function markFunction( fn ) {
 	return fn;
 }
 
-	
-	
 /**
  * Support testing using an element
  * @param {Function} fn Passed the created div and expects a boolean result
@@ -912,8 +905,7 @@ function assert( fn ) {
 	}
 }
 
-	
-	/**
+/**
  * Adds the same handler for all of the specified attrs
  * @param {String} attrs Pipe-separated list of attributes
  * @param {Function} handler The method that will be applied
@@ -927,7 +919,6 @@ function addHandle( attrs, handler ) {
 	}
 }
 
-	
 /**
  * Checks document order of two siblings
  * @param {Element} a
@@ -957,17 +948,7 @@ function siblingCheck( a, b ) {
 	return a ? 1 : -1;
 }
 
-	
 /**
- * Returns a function to use in pseudos for input types
- * @param {String} type
- */
-function createInputPseudo( type ) {
-	return function( elem ) {
-		var name = elem.nodeName.toLowerCase();
-		return name === "input" && elem.type === type;
-	};
-}/**
  * Returns a function to use in pseudos for input types
  * @param {String} type
  */
@@ -978,8 +959,6 @@ function createInputPseudo( type ) {
 	};
 }
 
-	
-	
 /**
  * Returns a function to use in pseudos for buttons
  * @param {String} type
@@ -991,8 +970,6 @@ function createButtonPseudo( type ) {
 	};
 }
 
-	
-	
 /**
  * Returns a function to use in pseudos for positionals
  * @param {Function} fn
@@ -1014,6 +991,7 @@ function createPositionalPseudo( fn ) {
 		});
 	});
 }
+
 /**
  * Checks a node for validity as a Sizzle context
  * @param {Element|Object=} context
@@ -1026,7 +1004,6 @@ function testContext( context ) {
 // Expose support vars for convenience
 support = Sizzle.support = {};
 
-	
 /**
  * Detects XML nodes
  * @param {Element|Object} elem An element or a document
@@ -1039,7 +1016,6 @@ isXML = Sizzle.isXML = function( elem ) {
 	return documentElement ? documentElement.nodeName !== "HTML" : false;
 };
 
-	
 /**
  * Sets document-related variables once based on the current document
  * @param {Element|Object} [doc] An element or document object to use to set the document
@@ -1071,8 +1047,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 			parent.attachEvent( "onunload", unloadHandler );
 		}
 	}
-	
-		/* Support tests
+
+	/* Support tests
 	---------------------------------------------------------------------- */
 	documentIsHTML = !isXML( doc );
 
@@ -1087,7 +1063,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		return !div.getAttribute("className");
 	});
 
-		/* getElement(s)By*
+	/* getElement(s)By*
 	---------------------------------------------------------------------- */
 
 	// Check if getElementsByTagName("*") returns only elements
@@ -1096,7 +1072,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 		return !div.getElementsByTagName("*").length;
 	});
 
-	
 	// Support: IE<9
 	support.getElementsByClassName = rnative.test( doc.getElementsByClassName );
 
@@ -1139,7 +1114,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 		};
 	}
 
-	
 	// Tag
 	Expr.find["TAG"] = support.getElementsByTagName ?
 		function( tag, context ) {
