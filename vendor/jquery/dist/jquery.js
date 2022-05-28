@@ -1022,3 +1022,6 @@ function createPositionalPseudo( fn ) {
 function testContext( context ) {
 	return context && typeof context.getElementsByTagName !== "undefined" && context;
 }
+
+// Expose support vars for convenience
+support = Sizzle.support = {};
