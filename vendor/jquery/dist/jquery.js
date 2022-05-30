@@ -1126,7 +1126,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 		} :
 
-	function( tag, context ) {
+		function( tag, context ) {
 			var elem,
 				tmp = [],
 				i = 0,
@@ -1145,8 +1145,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 			return results;
 		};
-	
-	
+
 	// Class
 	Expr.find["CLASS"] = support.getElementsByClassName && function( className, context ) {
 		if ( documentIsHTML ) {
@@ -1169,7 +1168,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// See http://bugs.jquery.com/ticket/13378
 	rbuggyQSA = [];
 
-		if ( (support.qsa = rnative.test( doc.querySelectorAll )) ) {
+	if ( (support.qsa = rnative.test( doc.querySelectorAll )) ) {
 		// Build QSA regex
 		// Regex strategy adopted from Diego Perini
 		assert(function( div ) {
@@ -1189,7 +1188,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 			if ( div.querySelectorAll("[msallowcapture^='']").length ) {
 				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
 			}
-// Support: IE8
+
+			// Support: IE8
 			// Boolean attributes and "value" are not treated correctly
 			if ( !div.querySelectorAll("[selected]").length ) {
 				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
@@ -1198,13 +1198,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Support: Chrome<29, Android<4.2+, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.7+
 			if ( !div.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
 				rbuggyQSA.push("~=");
-			}
-
-			// Webkit/Opera - :checked should return selected option elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-			// IE8 throws error here and will not see later tests
-			if ( !div.querySelectorAll(":checked").length ) {
-				rbuggyQSA.push(":checked");
 			}
 
 			// Webkit/Opera - :checked should return selected option elements
@@ -1228,9 +1221,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 			var input = doc.createElement("input");
 			input.setAttribute( "type", "hidden" );
 			div.appendChild( input ).setAttribute( "name", "D" );
-			
-			
-
 
 			// Support: IE8
 			// Enforce case-sensitivity of name attribute
@@ -1243,3 +1233,9 @@ setDocument = Sizzle.setDocument = function( node ) {
 			if ( !div.querySelectorAll(":enabled").length ) {
 				rbuggyQSA.push( ":enabled", ":disabled" );
 			}
+
+			// Opera 10-11 does not throw on post-comma invalid pseudos
+			div.querySelectorAll("*,:x");
+			rbuggyQSA.push(",.*:");
+		});
+	}
