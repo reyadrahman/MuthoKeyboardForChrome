@@ -1221,3 +1221,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 				rbuggyQSA.push(".#.+[+~]");
 			}
 		});
+
+		assert(function( div ) {
+			// Support: Windows 8 Native Apps
+			// The type and name attributes are restricted during .innerHTML assignment
+			var input = doc.createElement("input");
+			input.setAttribute( "type", "hidden" );
+			div.appendChild( input ).setAttribute( "name", "D" );
