@@ -1462,3 +1462,8 @@ Sizzle.contains = function( context, elem ) {
 				val.value :
 				null;
 };
+
+
+Sizzle.error = function( msg ) {
+	throw new Error( "Syntax error, unrecognized expression: " + msg );
+};
