@@ -1432,3 +1432,12 @@ Sizzle.matchesSelector = function( elem, expr ) {
 
 	return Sizzle( expr, document, null, [ elem ] ).length > 0;
 };
+
+	
+Sizzle.contains = function( context, elem ) {
+	// Set document vars if needed
+	if ( ( context.ownerDocument || context ) !== document ) {
+		setDocument( context );
+	}
+	return contains( context, elem );
+};
