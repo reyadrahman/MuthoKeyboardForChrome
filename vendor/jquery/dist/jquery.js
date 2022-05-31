@@ -1258,3 +1258,9 @@ setDocument = Sizzle.setDocument = function( node ) {
 			rbuggyMatches.push( "!=", pseudos );
 		});
 	}
+	
+	
+
+	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join("|") );
+	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join("|") );
+
