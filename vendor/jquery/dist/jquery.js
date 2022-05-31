@@ -1501,3 +1501,8 @@ Sizzle.uniqueSort = function( results ) {
 
 	return results;
 };
+	
+/**
+ * Utility function for retrieving the text value of an array of DOM nodes
+ * @param {Array|Element} elem
+ */
