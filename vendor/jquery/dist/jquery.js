@@ -1398,3 +1398,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	return doc;
 };
+
+	Sizzle.matches = function( expr, elements ) {
+	return Sizzle( expr, null, null, elements );
+};
