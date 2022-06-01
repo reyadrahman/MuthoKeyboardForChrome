@@ -1724,7 +1724,8 @@ Expr = Sizzle.selectors = {
 									break;
 								}
 							}
-// Use previously-cached element index if available
+
+						// Use previously-cached element index if available
 						} else if ( useCache && (cache = (elem[ expando ] || (elem[ expando ] = {}))[ type ]) && cache[0] === dirruns ) {
 							diff = cache[1];
 
@@ -1753,6 +1754,7 @@ Expr = Sizzle.selectors = {
 					}
 				};
 		},
+
 		"PSEUDO": function( pseudo, argument ) {
 			// pseudo-class names are case-insensitive
 			// http://www.w3.org/TR/selectors/#pseudo-classes
@@ -1790,6 +1792,7 @@ Expr = Sizzle.selectors = {
 			return fn;
 		}
 	},
+
 	pseudos: {
 		// Potentially complex pseudos
 		"not": markFunction(function( selector ) {
@@ -1813,7 +1816,6 @@ Expr = Sizzle.selectors = {
 						}
 					}
 				}) :
-
 				function( elem, context, xml ) {
 					input[0] = elem;
 					matcher( input, null, xml, results );
@@ -1893,7 +1895,8 @@ Expr = Sizzle.selectors = {
 			var nodeName = elem.nodeName.toLowerCase();
 			return (nodeName === "input" && !!elem.checked) || (nodeName === "option" && !!elem.selected);
 		},
-				"selected": function( elem ) {
+
+		"selected": function( elem ) {
 			// Accessing this property makes selected-by-default
 			// options in Safari work properly
 			if ( elem.parentNode ) {
@@ -1925,7 +1928,6 @@ Expr = Sizzle.selectors = {
 		"header": function( elem ) {
 			return rheader.test( elem.nodeName );
 		},
-
 
 		"input": function( elem ) {
 			return rinputs.test( elem.nodeName );
