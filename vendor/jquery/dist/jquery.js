@@ -1822,3 +1822,9 @@ Expr = Sizzle.selectors = {
 					return !results.pop();
 				};
 		}),
+
+		"has": markFunction(function( selector ) {
+			return function( elem ) {
+				return Sizzle( selector, elem ).length > 0;
+			};
+		}),
