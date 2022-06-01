@@ -1828,3 +1828,10 @@ Expr = Sizzle.selectors = {
 				return Sizzle( selector, elem ).length > 0;
 			};
 		}),
+
+		"contains": markFunction(function( text ) {
+			text = text.replace( runescape, funescape );
+			return function( elem ) {
+				return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
+			};
+		}),
