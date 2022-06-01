@@ -1240,7 +1240,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 		});
 	}
 
-	
 	if ( (support.matchesSelector = rnative.test( (matches = docElem.matches ||
 		docElem.webkitMatchesSelector ||
 		docElem.mozMatchesSelector ||
@@ -1258,13 +1257,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 			rbuggyMatches.push( "!=", pseudos );
 		});
 	}
-	
-	
 
 	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join("|") );
 	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join("|") );
 
-	
 	/* Contains
 	---------------------------------------------------------------------- */
 	hasCompare = rnative.test( docElem.compareDocumentPosition );
@@ -1293,7 +1289,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			return false;
 		};
 
-		/* Sorting
+	/* Sorting
 	---------------------------------------------------------------------- */
 
 	// Document order sorting
@@ -1345,8 +1341,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 			hasDuplicate = true;
 			return 0;
 		}
-		
-		
 
 		var cur,
 			i = 0,
@@ -1369,7 +1363,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 		} else if ( aup === bup ) {
 			return siblingCheck( a, b );
 		}
-
 
 		// Otherwise we need full lists of their ancestors for comparison
 		cur = a;
@@ -1399,11 +1392,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 	return doc;
 };
 
-	Sizzle.matches = function( expr, elements ) {
+Sizzle.matches = function( expr, elements ) {
 	return Sizzle( expr, null, null, elements );
 };
 
-	
 Sizzle.matchesSelector = function( elem, expr ) {
 	// Set document vars if needed
 	if ( ( elem.ownerDocument || elem ) !== document ) {
@@ -1433,7 +1425,6 @@ Sizzle.matchesSelector = function( elem, expr ) {
 	return Sizzle( expr, document, null, [ elem ] ).length > 0;
 };
 
-	
 Sizzle.contains = function( context, elem ) {
 	// Set document vars if needed
 	if ( ( context.ownerDocument || context ) !== document ) {
@@ -1442,7 +1433,7 @@ Sizzle.contains = function( context, elem ) {
 	return contains( context, elem );
 };
 
-	Sizzle.attr = function( elem, name ) {
+Sizzle.attr = function( elem, name ) {
 	// Set document vars if needed
 	if ( ( elem.ownerDocument || elem ) !== document ) {
 		setDocument( elem );
@@ -1463,12 +1454,10 @@ Sizzle.contains = function( context, elem ) {
 				null;
 };
 
-
 Sizzle.error = function( msg ) {
 	throw new Error( "Syntax error, unrecognized expression: " + msg );
 };
 
-	
 /**
  * Document sorting and removing duplicates
  * @param {ArrayLike} results
@@ -1501,13 +1490,12 @@ Sizzle.uniqueSort = function( results ) {
 
 	return results;
 };
-	
+
 /**
  * Utility function for retrieving the text value of an array of DOM nodes
  * @param {Array|Element} elem
  */
-
-	getText = Sizzle.getText = function( elem ) {
+getText = Sizzle.getText = function( elem ) {
 	var node,
 		ret = "",
 		i = 0,
@@ -1538,7 +1526,6 @@ Sizzle.uniqueSort = function( results ) {
 	return ret;
 };
 
-	
 Expr = Sizzle.selectors = {
 
 	// Can be adjusted by the user
@@ -1655,7 +1642,6 @@ Expr = Sizzle.selectors = {
 				});
 		},
 
-		
 		"ATTR": function( name, operator, check ) {
 			return function( elem ) {
 				var result = Sizzle.attr( elem, name );
@@ -1679,3 +1665,62 @@ Expr = Sizzle.selectors = {
 					false;
 			};
 		},
+
+		"CHILD": function( type, what, argument, first, last ) {
+			var simple = type.slice( 0, 3 ) !== "nth",
+				forward = type.slice( -4 ) !== "last",
+				ofType = what === "of-type";
+
+			return first === 1 && last === 0 ?
+
+				// Shortcut for :nth-*(n)
+				function( elem ) {
+					return !!elem.parentNode;
+				} :
+
+				function( elem, context, xml ) {
+					var cache, outerCache, node, diff, nodeIndex, start,
+						dir = simple !== forward ? "nextSibling" : "previousSibling",
+						parent = elem.parentNode,
+						name = ofType && elem.nodeName.toLowerCase(),
+						useCache = !xml && !ofType;
+
+					if ( parent ) {
+
+						// :(first|last|only)-(child|of-type)
+						if ( simple ) {
+							while ( dir ) {
+								node = elem;
+								while ( (node = node[ dir ]) ) {
+									if ( ofType ? node.nodeName.toLowerCase() === name : node.nodeType === 1 ) {
+										return false;
+									}
+								}
+								// Reverse direction for :only-* (if we haven't yet done so)
+								start = dir = type === "only" && !start && "nextSibling";
+							}
+							return true;
+						}
+
+						start = [ forward ? parent.firstChild : parent.lastChild ];
+
+						// non-xml :nth-child(...) stores cache data on `parent`
+						if ( forward && useCache ) {
+							// Seek `elem` from a previously-cached index
+							outerCache = parent[ expando ] || (parent[ expando ] = {});
+							cache = outerCache[ type ] || [];
+							nodeIndex = cache[0] === dirruns && cache[1];
+							diff = cache[0] === dirruns && cache[2];
+							node = nodeIndex && parent.childNodes[ nodeIndex ];
+
+							while ( (node = ++nodeIndex && node && node[ dir ] ||
+
+								// Fallback to seeking `elem` from the start
+								(diff = nodeIndex = 0) || start.pop()) ) {
+
+								// When found, cache indexes on `parent` and break
+								if ( node.nodeType === 1 && ++diff && node === elem ) {
+									outerCache[ type ] = [ dirruns, nodeIndex, diff ];
+									break;
+								}
+							}
