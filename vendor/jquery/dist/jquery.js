@@ -2047,3 +2047,22 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 			});
 			soFar = soFar.slice( matched.length );
 		}
+		
+				// Filters
+		for ( type in Expr.filter ) {
+			if ( (match = matchExpr[ type ].exec( soFar )) && (!preFilters[ type ] ||
+				(match = preFilters[ type ]( match ))) ) {
+				matched = match.shift();
+				tokens.push({
+					value: matched,
+					type: type,
+					matches: match
+				});
+				soFar = soFar.slice( matched.length );
+			}
+		}
+
+		if ( !matched ) {
+			break;
+		}
+	}
