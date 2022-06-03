@@ -2066,3 +2066,14 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 			break;
 		}
 	}
+
+	// Return the length of the invalid excess
+	// if we're just parsing
+	// Otherwise, throw an error or return tokens
+	return parseOnly ?
+		soFar.length :
+		soFar ?
+			Sizzle.error( selector ) :
+			// Cache the tokens
+			tokenCache( selector, groups ).slice( 0 );
+};
