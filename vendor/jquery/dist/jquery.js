@@ -2005,7 +2005,6 @@ for ( i in { submit: true, reset: true } ) {
 	Expr.pseudos[ i ] = createButtonPseudo( i );
 }
 
-	
 // Easy API for creating new setFilters
 function setFilters() {}
 setFilters.prototype = Expr.filters = Expr.pseudos;
@@ -2047,8 +2046,8 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 			});
 			soFar = soFar.slice( matched.length );
 		}
-		
-				// Filters
+
+		// Filters
 		for ( type in Expr.filter ) {
 			if ( (match = matchExpr[ type ].exec( soFar )) && (!preFilters[ type ] ||
 				(match = preFilters[ type ]( match ))) ) {
@@ -2077,6 +2076,7 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 			// Cache the tokens
 			tokenCache( selector, groups ).slice( 0 );
 };
+
 function toSelector( tokens ) {
 	var i = 0,
 		len = tokens.length,
@@ -2087,7 +2087,7 @@ function toSelector( tokens ) {
 	return selector;
 }
 
-	function addCombinator( matcher, combinator, base ) {
+function addCombinator( matcher, combinator, base ) {
 	var dir = combinator.dir,
 		checkNonElements = base && dir === "parentNode",
 		doneName = done++;
@@ -2140,7 +2140,6 @@ function toSelector( tokens ) {
 		};
 }
 
-	
 function elementMatcher( matchers ) {
 	return matchers.length > 1 ?
 		function( elem, context, xml ) {
@@ -2155,7 +2154,7 @@ function elementMatcher( matchers ) {
 		matchers[0];
 }
 
-	function multipleContexts( selector, contexts, results ) {
+function multipleContexts( selector, contexts, results ) {
 	var i = 0,
 		len = contexts.length;
 	for ( ; i < len; i++ ) {
@@ -2164,7 +2163,7 @@ function elementMatcher( matchers ) {
 	return results;
 }
 
-	function condense( unmatched, map, filter, context, xml ) {
+function condense( unmatched, map, filter, context, xml ) {
 	var elem,
 		newUnmatched = [],
 		i = 0,
@@ -2185,8 +2184,7 @@ function elementMatcher( matchers ) {
 	return newUnmatched;
 }
 
-	
-	function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postSelector ) {
+function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postSelector ) {
 	if ( postFilter && !postFilter[ expando ] ) {
 		postFilter = setMatcher( postFilter );
 	}
@@ -2237,7 +2235,6 @@ function elementMatcher( matchers ) {
 			}
 		}
 
-		
 		if ( seed ) {
 			if ( postFinder || preFilter ) {
 				if ( postFinder ) {
@@ -2280,7 +2277,7 @@ function elementMatcher( matchers ) {
 	});
 }
 
-	function matcherFromTokens( tokens ) {
+function matcherFromTokens( tokens ) {
 	var checkContext, matcher, j,
 		len = tokens.length,
 		leadingRelative = Expr.relative[ tokens[0].type ],
@@ -2337,8 +2334,6 @@ function elementMatcher( matchers ) {
 
 	return elementMatcher( matchers );
 }
-
-	
 
 function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 	var bySet = setMatchers.length > 0,
@@ -2438,6 +2433,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 		markFunction( superMatcher ) :
 		superMatcher;
 }
+
 compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 	var i,
 		setMatchers = [],
