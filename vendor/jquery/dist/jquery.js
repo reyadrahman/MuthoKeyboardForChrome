@@ -2463,6 +2463,7 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 	}
 	return cached;
 };
+
 /**
  * A low-level selection function that works with Sizzle's compiled
  *  selector functions
@@ -2541,6 +2542,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 	);
 	return results;
 };
+
 // One-time assignments
 
 // Sort stability
@@ -2559,6 +2561,7 @@ support.sortDetached = assert(function( div1 ) {
 	// Should return 1, but returns 4 (following)
 	return div1.compareDocumentPosition( document.createElement("div") ) & 1;
 });
+
 // Support: IE<8
 // Prevent attribute/property "interpolation"
 // http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
@@ -2602,6 +2605,7 @@ if ( !assert(function( div ) {
 		}
 	});
 }
+
 return Sizzle;
 
 })( window );
@@ -2621,8 +2625,10 @@ jQuery.contains = Sizzle.contains;
 var rneedsContext = jQuery.expr.match.needsContext;
 
 var rsingleTag = (/^<(\w+)\s*\/?>(?:<\/\1>|)$/);
-	
-	var risSimple = /^.[^:#\[\.,]*$/;
+
+
+
+var risSimple = /^.[^:#\[\.,]*$/;
 
 // Implement the identical functionality for filter and not
 function winnow( elements, qualifier, not ) {
@@ -2641,35 +2647,6 @@ function winnow( elements, qualifier, not ) {
 
 	}
 
-	
-	if ( typeof qualifier === "string" ) {
-		if ( risSimple.test( qualifier ) ) {
-			return jQuery.filter( qualifier, elements, not );
-		}
-
-		qualifier = jQuery.filter( qualifier, elements );
-	}
-
-	return jQuery.grep( elements, function( elem ) {
-		return ( indexOf.call( qualifier, elem ) >= 0 ) !== not;
-	});
-}
-
-jQuery.filter = function( expr, elems, not ) {
-	var elem = elems[ 0 ];
-
-	if ( not ) {
-		expr = ":not(" + expr + ")";
-	}
-
-	return elems.length === 1 && elem.nodeType === 1 ?
-		jQuery.find.matchesSelector( elem, expr ) ? [ elem ] : [] :
-		jQuery.find.matches( expr, jQuery.grep( elems, function( elem ) {
-			return elem.nodeType === 1;
-		}));
-};
-
-	
 	if ( typeof qualifier === "string" ) {
 		if ( risSimple.test( qualifier ) ) {
 			return jQuery.filter( qualifier, elements, not );
@@ -2853,3 +2830,72 @@ var rootjQuery,
 
 		return jQuery.makeArray( selector, this );
 	};
+
+// Give the init function the jQuery prototype for later instantiation
+init.prototype = jQuery.fn;
+
+// Initialize central reference
+rootjQuery = jQuery( document );
+
+
+var rparentsprev = /^(?:parents|prev(?:Until|All))/,
+	// Methods guaranteed to produce a unique set when starting from a unique set
+	guaranteedUnique = {
+		children: true,
+		contents: true,
+		next: true,
+		prev: true
+	};
+
+jQuery.extend({
+	dir: function( elem, dir, until ) {
+		var matched = [],
+			truncate = until !== undefined;
+
+		while ( (elem = elem[ dir ]) && elem.nodeType !== 9 ) {
+			if ( elem.nodeType === 1 ) {
+				if ( truncate && jQuery( elem ).is( until ) ) {
+					break;
+				}
+				matched.push( elem );
+			}
+		}
+		return matched;
+	},
+
+	sibling: function( n, elem ) {
+		var matched = [];
+
+		for ( ; n; n = n.nextSibling ) {
+			if ( n.nodeType === 1 && n !== elem ) {
+				matched.push( n );
+			}
+		}
+
+		return matched;
+	}
+});
+
+jQuery.fn.extend({
+	has: function( target ) {
+		var targets = jQuery( target, this ),
+			l = targets.length;
+
+		return this.filter(function() {
+			var i = 0;
+			for ( ; i < l; i++ ) {
+				if ( jQuery.contains( this, targets[i] ) ) {
+					return true;
+				}
+			}
+		});
+	},
+
+	closest: function( selectors, context ) {
+		var cur,
+			i = 0,
+			l = this.length,
+			matched = [],
+			pos = rneedsContext.test( selectors ) || typeof selectors !== "string" ?
+				jQuery( selectors, context || this.context ) :
+				0;
