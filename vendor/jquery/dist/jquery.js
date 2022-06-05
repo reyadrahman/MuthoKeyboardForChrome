@@ -2602,3 +2602,22 @@ if ( !assert(function( div ) {
 		}
 	});
 }
+return Sizzle;
+
+})( window );
+
+
+
+jQuery.find = Sizzle;
+jQuery.expr = Sizzle.selectors;
+jQuery.expr[":"] = jQuery.expr.pseudos;
+jQuery.unique = Sizzle.uniqueSort;
+jQuery.text = Sizzle.getText;
+jQuery.isXMLDoc = Sizzle.isXML;
+jQuery.contains = Sizzle.contains;
+
+
+
+var rneedsContext = jQuery.expr.match.needsContext;
+
+var rsingleTag = (/^<(\w+)\s*\/?>(?:<\/\1>|)$/);
