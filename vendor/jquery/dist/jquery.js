@@ -3303,3 +3303,14 @@ jQuery.extend({
 			};
 			deferred[ tuple[0] + "With" ] = list.fireWith;
 		});
+		// Make the deferred a promise
+		promise.promise( deferred );
+
+		// Call given func if any
+		if ( func ) {
+			func.call( deferred, deferred );
+		}
+
+		// All done!
+		return deferred;
+	},
