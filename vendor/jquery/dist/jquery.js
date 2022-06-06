@@ -2899,6 +2899,7 @@ jQuery.fn.extend({
 			pos = rneedsContext.test( selectors ) || typeof selectors !== "string" ?
 				jQuery( selectors, context || this.context ) :
 				0;
+
 		for ( ; i < l; i++ ) {
 			for ( cur = this[i]; cur && cur !== context; cur = cur.parentNode ) {
 				// Always skip document fragments
@@ -2917,6 +2918,7 @@ jQuery.fn.extend({
 
 		return this.pushStack( matched.length > 1 ? jQuery.unique( matched ) : matched );
 	},
+
 	// Determine the position of an element within the set
 	index: function( elem ) {
 
@@ -2952,13 +2954,12 @@ jQuery.fn.extend({
 		);
 	}
 });
-	
+
 function sibling( cur, dir ) {
 	while ( (cur = cur[dir]) && cur.nodeType !== 1 ) {}
 	return cur;
 }
 
-	
 jQuery.each({
 	parent: function( elem ) {
 		var parent = elem.parentNode;
@@ -3000,3 +3001,27 @@ jQuery.each({
 }, function( name, fn ) {
 	jQuery.fn[ name ] = function( until, selector ) {
 		var matched = jQuery.map( this, fn, until );
+
+		if ( name.slice( -5 ) !== "Until" ) {
+			selector = until;
+		}
+
+		if ( selector && typeof selector === "string" ) {
+			matched = jQuery.filter( selector, matched );
+		}
+
+		if ( this.length > 1 ) {
+			// Remove duplicates
+			if ( !guaranteedUnique[ name ] ) {
+				jQuery.unique( matched );
+			}
+
+			// Reverse order for parents* and prev-derivatives
+			if ( rparentsprev.test( name ) ) {
+				matched.reverse();
+			}
+		}
+
+		return this.pushStack( matched );
+	};
+});
