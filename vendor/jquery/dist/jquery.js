@@ -3704,3 +3704,6 @@ Data.prototype = {
 		}
 	}
 };
+
+	
+	var data_priv = new Data();
