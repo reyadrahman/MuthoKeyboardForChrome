@@ -3423,14 +3423,6 @@ jQuery.extend({
 		}
 	}
 });
-/**
- * The ready event handler and self cleanup method
- */
-function completed() {
-	document.removeEventListener( "DOMContentLoaded", completed, false );
-	window.removeEventListener( "load", completed, false );
-	jQuery.ready();
-}
 
 /**
  * The ready event handler and self cleanup method
@@ -3465,11 +3457,13 @@ jQuery.ready.promise = function( obj ) {
 	return readyList.promise( obj );
 };
 
-	
 // Kick off the DOM ready check even if the user does not
 jQuery.ready.promise();
 
-	// Multifunctional method to get and set values of a collection
+
+
+
+// Multifunctional method to get and set values of a collection
 // The value/s can optionally be executed if it's a function
 var access = jQuery.access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 	var i = 0,
@@ -3522,7 +3516,8 @@ var access = jQuery.access = function( elems, fn, key, value, chainable, emptyGe
 			len ? fn( elems[0], key ) : emptyGet;
 };
 
-	/**
+
+/**
  * Determines whether an object can have data
  */
 jQuery.acceptData = function( owner ) {
@@ -3536,21 +3531,6 @@ jQuery.acceptData = function( owner ) {
 	return owner.nodeType === 1 || owner.nodeType === 9 || !( +owner.nodeType );
 };
 
-	/**
- * Determines whether an object can have data
- */
-jQuery.acceptData = function( owner ) {
-	// Accepts only:
-	//  - Node
-	//    - Node.ELEMENT_NODE
-	//    - Node.DOCUMENT_NODE
-	//  - Object
-	//    - Any
-	/* jshint -W018 */
-	return owner.nodeType === 1 || owner.nodeType === 9 || !( +owner.nodeType );
-};
-
-	
 
 function Data() {
 	// Support: Android<4,
@@ -3565,7 +3545,6 @@ function Data() {
 	this.expando = jQuery.expando + Data.uid++;
 }
 
-	
 Data.uid = 1;
 Data.accepts = jQuery.acceptData;
 
@@ -3714,3 +3693,14 @@ Data.prototype = {
 			}
 		}
 	},
+	hasData: function( owner ) {
+		return !jQuery.isEmptyObject(
+			this.cache[ owner[ this.expando ] ] || {}
+		);
+	},
+	discard: function( owner ) {
+		if ( owner[ this.expando ] ) {
+			delete this.cache[ owner[ this.expando ] ];
+		}
+	}
+};
