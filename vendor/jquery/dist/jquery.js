@@ -3783,3 +3783,11 @@ jQuery.fn.extend({
 
 			return data;
 		}
+
+		
+			// Sets multiple values
+		if ( typeof key === "object" ) {
+			return this.each(function() {
+				data_user.set( this, key );
+			});
+		}
