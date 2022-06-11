@@ -4011,3 +4011,5 @@ jQuery.fn.extend({
 		return defer.promise( obj );
 	}
 });
+
+	var pnum = (/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/).source;
