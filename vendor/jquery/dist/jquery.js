@@ -4022,3 +4022,5 @@ jQuery.fn.extend({
 		elem = el || elem;
 		return jQuery.css( elem, "display" ) === "none" || !jQuery.contains( elem.ownerDocument, elem );
 	};
+
+	var rcheckableType = (/^(?:checkbox|radio)$/i);
