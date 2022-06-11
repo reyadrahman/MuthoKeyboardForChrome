@@ -4013,3 +4013,5 @@ jQuery.fn.extend({
 });
 
 	var pnum = (/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/).source;
+	
+	var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
