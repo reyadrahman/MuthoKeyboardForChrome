@@ -4282,3 +4282,10 @@ jQuery.event = {
 		if ( rfocusMorph.test( type + jQuery.event.triggered ) ) {
 			return;
 		}
+		if ( type.indexOf(".") >= 0 ) {
+			// Namespaced trigger; create a regexp to match event type in handle()
+			namespaces = type.split(".");
+			type = namespaces.shift();
+			namespaces.sort();
+		}
+		ontype = type.indexOf(":") < 0 && "on" + type;
