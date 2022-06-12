@@ -4058,12 +4058,6 @@ var strundefined = typeof undefined;
 support.focusinBubbles = "onfocusin" in window;
 
 
-var
-	rkeyEvent = /^key/,
-	rmouseEvent = /^(?:mouse|pointer|contextmenu)|click/,
-	rfocusMorph = /^(?:focusinfocus|focusoutblur)$/,
-	rtypenamespace = /^([^.]*)(?:\.(.+)|)$/;
-
-function returnTrue() {
-	return true;
+function returnFalse() {
+	return false;
 }
