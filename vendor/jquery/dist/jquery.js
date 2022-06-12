@@ -4256,3 +4256,10 @@ jQuery.event = {
 				delete events[ type ];
 			}
 		}
+
+		// Remove the expando if it's no longer used
+		if ( jQuery.isEmptyObject( events ) ) {
+			delete elemData.handle;
+			data_priv.remove( elem, "events" );
+		}
+	},
