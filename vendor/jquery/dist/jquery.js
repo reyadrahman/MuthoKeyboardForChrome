@@ -4171,3 +4171,12 @@ jQuery.event = {
 					}
 				}
 			}
+			
+			if ( special.add ) {
+				special.add.call( elem, handleObj );
+
+				if ( !handleObj.handler.guid ) {
+					handleObj.handler.guid = handler.guid;
+				}
+			}
+
