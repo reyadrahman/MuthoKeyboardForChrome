@@ -4657,3 +4657,9 @@ jQuery.event = {
 		}
 	}
 };
+
+	jQuery.removeEvent = function( elem, type, handle ) {
+	if ( elem.removeEventListener ) {
+		elem.removeEventListener( type, handle, false );
+	}
+};
