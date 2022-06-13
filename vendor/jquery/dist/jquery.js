@@ -4355,3 +4355,14 @@ jQuery.event = {
 			if ( handle ) {
 				handle.apply( cur, data );
 			}
+
+				// Native handler
+			handle = ontype && cur[ ontype ];
+			if ( handle && handle.apply && jQuery.acceptData( cur ) ) {
+				event.result = handle.apply( cur, data );
+				if ( event.result === false ) {
+					event.preventDefault();
+				}
+			}
+		}
+		event.type = type;
