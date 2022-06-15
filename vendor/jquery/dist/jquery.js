@@ -4719,3 +4719,17 @@ jQuery.Event.prototype = {
 			e.preventDefault();
 		}
 	},
+
+	
+	stopImmediatePropagation: function() {
+		var e = this.originalEvent;
+
+		this.isImmediatePropagationStopped = returnTrue;
+
+		if ( e && e.stopImmediatePropagation ) {
+			e.stopImmediatePropagation();
+		}
+
+		this.stopPropagation();
+	}
+};
