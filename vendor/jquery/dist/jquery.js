@@ -4890,3 +4890,16 @@ jQuery.fn.extend({
 			jQuery.event.remove( this, types, fn, selector );
 		});
 	},
+
+	trigger: function( type, data ) {
+		return this.each(function() {
+			jQuery.event.trigger( type, data, this );
+		});
+	},
+	triggerHandler: function( type, data ) {
+		var elem = this[0];
+		if ( elem ) {
+			return jQuery.event.trigger( type, data, elem, true );
+		}
+	}
+});
