@@ -5011,3 +5011,12 @@ function cloneCopyEvent( src, dest ) {
 			}
 		}
 	}
+
+	// 2. Copy user data
+	if ( data_user.hasData( src ) ) {
+		udataOld = data_user.access( src );
+		udataCur = jQuery.extend( {}, udataOld );
+
+		data_user.set( dest, udataCur );
+	}
+}
