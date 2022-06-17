@@ -5078,3 +5078,13 @@ function fixInput( src, dest ) {
 				cloneCopyEvent( elem, clone );
 			}
 		}
+
+			// Preserve script evaluation history
+		destElements = getAll( clone, "script" );
+		if ( destElements.length > 0 ) {
+			setGlobalEval( destElements, !inPage && getAll( elem, "script" ) );
+		}
+
+		// Return the cloned set
+		return clone;
+	},
