@@ -5248,3 +5248,11 @@ cleanData: function( elems ) {
 			}
 		});
 	},
+
+	after: function() {
+		return this.domManip( arguments, function( elem ) {
+			if ( this.parentNode ) {
+				this.parentNode.insertBefore( elem, this.nextSibling );
+			}
+		});
+	},
