@@ -5594,3 +5594,15 @@ function curCSS( elem, name, computed ) {
 		}
 	};
 }
+
+	
+
+(function() {
+	var pixelPositionVal, boxSizingReliableVal,
+		docElem = document.documentElement,
+		container = document.createElement( "div" ),
+		div = document.createElement( "div" );
+
+	if ( !div.style ) {
+		return;
+	}
