@@ -6245,3 +6245,20 @@ Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
 		}
 	}
 };
+
+	
+
+jQuery.easing = {
+	linear: function( p ) {
+		return p;
+	},
+	swing: function( p ) {
+		return 0.5 - Math.cos( p * Math.PI ) / 2;
+	}
+};
+
+jQuery.fx = Tween.prototype.init;
+
+// Back Compat <1.8 extension point
+jQuery.fx.step = {};
+
