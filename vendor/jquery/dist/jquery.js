@@ -6064,3 +6064,14 @@ jQuery.each([ "height", "width" ], function( i, name ) {
 		}
 	};
 });
+
+	
+	// Support: Android 2.3
+jQuery.cssHooks.marginRight = addGetHookIf( support.reliableMarginRight,
+	function( elem, computed ) {
+		if ( computed ) {
+			return jQuery.swap( elem, { "display": "inline-block" },
+				curCSS, [ elem, "marginRight" ] );
+		}
+	}
+);
