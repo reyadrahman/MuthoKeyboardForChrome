@@ -6606,3 +6606,12 @@ function Animation( elem, properties, options ) {
 			}
 		}),
 		props = animation.props;
+	
+	propFilter( props, animation.opts.specialEasing );
+
+	for ( ; index < length ; index++ ) {
+		result = animationPrefilters[ index ].call( animation, elem, props, animation.opts );
+		if ( result ) {
+			return result;
+		}
+	}
