@@ -6829,3 +6829,17 @@ jQuery.each([ "toggle", "show", "hide" ], function( i, name ) {
 			this.animate( genFx( name, true ), speed, easing, callback );
 	};
 });
+
+	// Generate shortcuts for custom animations
+jQuery.each({
+	slideDown: genFx("show"),
+	slideUp: genFx("hide"),
+	slideToggle: genFx("toggle"),
+	fadeIn: { opacity: "show" },
+	fadeOut: { opacity: "hide" },
+	fadeToggle: { opacity: "toggle" }
+}, function( name, props ) {
+	jQuery.fn[ name ] = function( speed, easing, callback ) {
+		return this.animate( props, speed, easing, callback );
+	};
+});
