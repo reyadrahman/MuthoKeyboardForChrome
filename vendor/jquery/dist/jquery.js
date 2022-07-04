@@ -7711,3 +7711,14 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		// Or just use first one
 		finalDataType = finalDataType || firstDataType;
 	}
+
+	// If we found a dataType
+	// We add the dataType to the list if needed
+	// and return the corresponding response
+	if ( finalDataType ) {
+		if ( finalDataType !== dataTypes[ 0 ] ) {
+			dataTypes.unshift( finalDataType );
+		}
+		return responses[ finalDataType ];
+	}
+}
