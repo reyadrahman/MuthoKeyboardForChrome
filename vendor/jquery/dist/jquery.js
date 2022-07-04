@@ -6830,7 +6830,7 @@ jQuery.each([ "toggle", "show", "hide" ], function( i, name ) {
 	};
 });
 
-	// Generate shortcuts for custom animations
+// Generate shortcuts for custom animations
 jQuery.each({
 	slideDown: genFx("show"),
 	slideUp: genFx("hide"),
@@ -6843,8 +6843,7 @@ jQuery.each({
 		return this.animate( props, speed, easing, callback );
 	};
 });
-	
-	
+
 jQuery.timers = [];
 jQuery.fx.tick = function() {
 	var timer,
@@ -6866,8 +6865,8 @@ jQuery.fx.tick = function() {
 	}
 	fxNow = undefined;
 };
-	
-	jQuery.fx.timer = function( timer ) {
+
+jQuery.fx.timer = function( timer ) {
 	jQuery.timers.push( timer );
 	if ( timer() ) {
 		jQuery.fx.start();
@@ -6884,8 +6883,6 @@ jQuery.fx.start = function() {
 	}
 };
 
-	
-	
 jQuery.fx.stop = function() {
 	clearInterval( timerId );
 	timerId = null;
@@ -6898,8 +6895,8 @@ jQuery.fx.speeds = {
 	_default: 400
 };
 
-	
-	// Based off of the plugin by Clint Helfers, with permission.
+
+// Based off of the plugin by Clint Helfers, with permission.
 // http://blindsignals.com/index.php/2009/07/jquery-delay/
 jQuery.fn.delay = function( time, type ) {
 	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
@@ -6912,8 +6909,8 @@ jQuery.fn.delay = function( time, type ) {
 		};
 	});
 };
-	
-	
+
+
 (function() {
 	var input = document.createElement( "input" ),
 		select = document.createElement( "select" ),
@@ -6942,6 +6939,7 @@ jQuery.fn.delay = function( time, type ) {
 	support.radioValue = input.value === "t";
 })();
 
+
 var nodeHook, boolHook,
 	attrHandle = jQuery.expr.attrHandle;
 
@@ -6957,8 +6955,7 @@ jQuery.fn.extend({
 	}
 });
 
-	
-	jQuery.extend({
+jQuery.extend({
 	attr: function( elem, name, value ) {
 		var hooks, ret,
 			nType = elem.nodeType;
@@ -7007,8 +7004,7 @@ jQuery.fn.extend({
 		}
 	},
 
-		
-		removeAttr: function( elem, value ) {
+	removeAttr: function( elem, value ) {
 		var name, propName,
 			i = 0,
 			attrNames = value && value.match( rnotwhite );
@@ -7027,7 +7023,8 @@ jQuery.fn.extend({
 			}
 		}
 	},
-attrHooks: {
+
+	attrHooks: {
 		type: {
 			set: function( elem, value ) {
 				if ( !support.radioValue && value === "radio" &&
@@ -7056,9 +7053,7 @@ boolHook = {
 		return name;
 	}
 };
-
-	
-	jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( i, name ) {
+jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( i, name ) {
 	var getter = attrHandle[ name ] || jQuery.find.attr;
 
 	attrHandle[ name ] = function( elem, name, isXML ) {
@@ -7076,8 +7071,10 @@ boolHook = {
 	};
 });
 
-	
-	var rfocusable = /^(?:input|select|textarea|button)$/i;
+
+
+
+var rfocusable = /^(?:input|select|textarea|button)$/i;
 
 jQuery.fn.extend({
 	prop: function( name, value ) {
@@ -7091,8 +7088,7 @@ jQuery.fn.extend({
 	}
 });
 
-	
-	jQuery.extend({
+jQuery.extend({
 	propFix: {
 		"for": "htmlFor",
 		"class": "className"
@@ -7138,8 +7134,7 @@ jQuery.fn.extend({
 	}
 });
 
-	
-	if ( !support.optSelected ) {
+if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
 			var parent = elem.parentNode;
@@ -7151,8 +7146,6 @@ jQuery.fn.extend({
 	};
 }
 
-	
-	
 jQuery.each([
 	"tabIndex",
 	"readOnly",
@@ -7168,8 +7161,9 @@ jQuery.each([
 	jQuery.propFix[ this.toLowerCase() ] = this;
 });
 
-	
-	
+
+
+
 var rclass = /[\t\r\n\f]/g;
 
 jQuery.fn.extend({
@@ -7318,9 +7312,11 @@ jQuery.fn.extend({
 		return false;
 	}
 });
-	
-	
-	var rreturn = /\r/g;
+
+
+
+
+var rreturn = /\r/g;
 
 jQuery.fn.extend({
 	val: function( value ) {
@@ -7385,8 +7381,7 @@ jQuery.fn.extend({
 	}
 });
 
-	
-	jQuery.extend({
+jQuery.extend({
 	valHooks: {
 		option: {
 			get: function( elem ) {
@@ -7459,8 +7454,7 @@ jQuery.fn.extend({
 	}
 });
 
-	
-	// Radios and checkboxes getter/setter
+// Radios and checkboxes getter/setter
 jQuery.each([ "radio", "checkbox" ], function() {
 	jQuery.valHooks[ this ] = {
 		set: function( elem, value ) {
@@ -7475,6 +7469,8 @@ jQuery.each([ "radio", "checkbox" ], function() {
 		};
 	}
 });
+
+
 
 
 // Return jQuery for attributes-only inclusion
@@ -7492,7 +7488,7 @@ jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblcl
 	};
 });
 
-	jQuery.fn.extend({
+jQuery.fn.extend({
 	hover: function( fnOver, fnOut ) {
 		return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
 	},
@@ -7513,8 +7509,8 @@ jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblcl
 	}
 });
 
-	
-	var nonce = jQuery.now();
+
+var nonce = jQuery.now();
 
 var rquery = (/\?/);
 
@@ -7548,8 +7544,8 @@ jQuery.parseXML = function( data ) {
 	return xml;
 };
 
-	
-	var
+
+var
 	rhash = /#.*$/,
 	rts = /([?&])_=[^&]*/,
 	rheaders = /^(.*?):[ \t]*([^\r\n]*)$/mg,
@@ -7618,8 +7614,7 @@ function addToPrefiltersOrTransports( structure ) {
 	};
 }
 
-	
-	// Base inspection function for prefilters and transports
+// Base inspection function for prefilters and transports
 function inspectPrefiltersOrTransports( structure, options, originalOptions, jqXHR ) {
 
 	var inspected = {},
@@ -7644,8 +7639,6 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
 	return inspect( options.dataTypes[ 0 ] ) || !inspected[ "*" ] && inspect( "*" );
 }
 
-	
-	
 // A special extend for ajax options
 // that takes "flat" options (not to be deep extended)
 // Fixes #9887
@@ -7665,8 +7658,7 @@ function ajaxExtend( target, src ) {
 	return target;
 }
 
-	
-	/* Handles responses to an ajax request:
+/* Handles responses to an ajax request:
  * - finds the right dataType (mediates between content-type and expected dataType)
  * - returns the corresponding response
  */
@@ -7694,7 +7686,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		}
 	}
 
-// Check to see if we have a response for the expected dataType
+	// Check to see if we have a response for the expected dataType
 	if ( dataTypes[ 0 ] in responses ) {
 		finalDataType = dataTypes[ 0 ];
 	} else {
@@ -7721,4 +7713,98 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		}
 		return responses[ finalDataType ];
 	}
+}
+
+/* Chain conversions given the request and the original response
+ * Also sets the responseXXX fields on the jqXHR instance
+ */
+function ajaxConvert( s, response, jqXHR, isSuccess ) {
+	var conv2, current, conv, tmp, prev,
+		converters = {},
+		// Work with a copy of dataTypes in case we need to modify it for conversion
+		dataTypes = s.dataTypes.slice();
+
+	// Create converters map with lowercased keys
+	if ( dataTypes[ 1 ] ) {
+		for ( conv in s.converters ) {
+			converters[ conv.toLowerCase() ] = s.converters[ conv ];
+		}
+	}
+
+	current = dataTypes.shift();
+
+	// Convert to each sequential dataType
+	while ( current ) {
+
+		if ( s.responseFields[ current ] ) {
+			jqXHR[ s.responseFields[ current ] ] = response;
+		}
+
+		// Apply the dataFilter if provided
+		if ( !prev && isSuccess && s.dataFilter ) {
+			response = s.dataFilter( response, s.dataType );
+		}
+
+		prev = current;
+		current = dataTypes.shift();
+
+		if ( current ) {
+
+		// There's only work to do if current dataType is non-auto
+			if ( current === "*" ) {
+
+				current = prev;
+
+			// Convert response if prev dataType is non-auto and differs from current
+			} else if ( prev !== "*" && prev !== current ) {
+
+				// Seek a direct converter
+				conv = converters[ prev + " " + current ] || converters[ "* " + current ];
+
+				// If none found, seek a pair
+				if ( !conv ) {
+					for ( conv2 in converters ) {
+
+						// If conv2 outputs current
+						tmp = conv2.split( " " );
+						if ( tmp[ 1 ] === current ) {
+
+							// If prev can be converted to accepted input
+							conv = converters[ prev + " " + tmp[ 0 ] ] ||
+								converters[ "* " + tmp[ 0 ] ];
+							if ( conv ) {
+								// Condense equivalence converters
+								if ( conv === true ) {
+									conv = converters[ conv2 ];
+
+								// Otherwise, insert the intermediate dataType
+								} else if ( converters[ conv2 ] !== true ) {
+									current = tmp[ 0 ];
+									dataTypes.unshift( tmp[ 1 ] );
+								}
+								break;
+							}
+						}
+					}
+				}
+
+				// Apply converter (if not an equivalence)
+				if ( conv !== true ) {
+
+					// Unless errors are allowed to bubble, catch and return them
+					if ( conv && s[ "throws" ] ) {
+						response = conv( response );
+					} else {
+						try {
+							response = conv( response );
+						} catch ( e ) {
+							return { state: "parsererror", error: conv ? e : "No conversion from " + prev + " to " + current };
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return { state: "success", data: response };
 }
