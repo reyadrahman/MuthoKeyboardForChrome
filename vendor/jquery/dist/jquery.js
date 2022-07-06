@@ -8372,3 +8372,12 @@ jQuery.extend({
 
 		return jqXHR;
 	},
+		
+			getJSON: function( url, data, callback ) {
+		return jQuery.get( url, data, callback, "json" );
+	},
+
+	getScript: function( url, callback ) {
+		return jQuery.get( url, undefined, callback, "script" );
+	}
+});
