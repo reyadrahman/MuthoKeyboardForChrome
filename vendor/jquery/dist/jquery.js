@@ -8597,3 +8597,9 @@ jQuery.param = function( a, traditional ) {
 		}).get();
 	}
 });
+	
+	jQuery.ajaxSettings.xhr = function() {
+	try {
+		return new XMLHttpRequest();
+	} catch( e ) {}
+};
