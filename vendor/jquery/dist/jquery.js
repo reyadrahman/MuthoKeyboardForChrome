@@ -8603,3 +8603,13 @@ jQuery.param = function( a, traditional ) {
 		return new XMLHttpRequest();
 	} catch( e ) {}
 };
+var xhrId = 0,
+	xhrCallbacks = {},
+	xhrSuccessStatus = {
+		// file protocol always yields status code 0, assume 200
+		0: 200,
+		// Support: IE9
+		// #1450: sometimes IE returns 1223 when it should be 204
+		1223: 204
+	},
+	xhrSupported = jQuery.ajaxSettings.xhr();
