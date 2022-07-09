@@ -8891,4 +8891,5 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 	return jQuery.merge( [], parsed.childNodes );
 };
 	
-	
+	// Keep a copy of the old load method
+var _load = jQuery.fn.load;
