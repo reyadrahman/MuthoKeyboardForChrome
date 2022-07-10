@@ -7808,8 +7808,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 
 	return { state: "success", data: response };
 }
-	
-	
+
 jQuery.extend({
 
 	// Counter for holding the number of active queries
@@ -7886,8 +7885,6 @@ jQuery.extend({
 		}
 	},
 
-	
-	
 	// Creates a full fledged settings object into target
 	// with both ajaxSettings and settings fields.
 	// If target is omitted, writes into ajaxSettings.
@@ -8020,9 +8017,7 @@ jQuery.extend({
 				}
 			};
 
-
-		
-				// Attach deferreds
+		// Attach deferreds
 		deferred.promise( jqXHR ).complete = completeDeferred.add;
 		jqXHR.success = jqXHR.done;
 		jqXHR.error = jqXHR.fail;
@@ -8072,7 +8067,7 @@ jQuery.extend({
 			jQuery.event.trigger("ajaxStart");
 		}
 
-				// Uppercase the type
+		// Uppercase the type
 		s.type = s.type.toUpperCase();
 
 		// Determine if request has content
@@ -8179,85 +8174,7 @@ jQuery.extend({
 				}
 			}
 		}
-		// Callback for when everything is done
-		function done( status, nativeStatusText, responses, headers ) {
-			var isSuccess, success, error, response, modified,
-				statusText = nativeStatusText;
 
-			// Called once
-			if ( state === 2 ) {
-				return;
-			}
-
-			// State is "done" now
-			state = 2;
-
-			// Clear timeout if it exists
-			if ( timeoutTimer ) {
-				clearTimeout( timeoutTimer );
-			}
-
-			// Dereference transport for early garbage collection
-			// (no matter how long the jqXHR object will be used)
-			transport = undefined;
-
-			// Cache response headers
-			responseHeadersString = headers || "";
-
-			// Set readyState
-			jqXHR.readyState = status > 0 ? 4 : 0;
-
-			// Determine if successful
-			isSuccess = status >= 200 && status < 300 || status === 304;
-
-			// Get response data
-			if ( responses ) {
-				response = ajaxHandleResponses( s, jqXHR, responses );
-			}
-
-			// Convert no matter what (that way responseXXX fields are always set)
-			response = ajaxConvert( s, response, jqXHR, isSuccess );
-
-			// If successful, handle type chaining
-			if ( isSuccess ) {
-
-				// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
-				if ( s.ifModified ) {
-					modified = jqXHR.getResponseHeader("Last-Modified");
-					if ( modified ) {
-						jQuery.lastModified[ cacheURL ] = modified;
-					}
-					modified = jqXHR.getResponseHeader("etag");
-					if ( modified ) {
-						jQuery.etag[ cacheURL ] = modified;
-					}
-				}
-
-				// if no content
-				if ( status === 204 || s.type === "HEAD" ) {
-					statusText = "nocontent";
-
-				// if not modified
-				} else if ( status === 304 ) {
-					statusText = "notmodified";
-
-				// If we have data, let's convert it
-				} else {
-					statusText = response.state;
-					success = response.data;
-					error = response.error;
-					isSuccess = !error;
-				}
-			} else {
-				// Extract error from statusText and normalize for non-aborts
-				error = statusText;
-				if ( status || !statusText ) {
-					statusText = "error";
-					if ( status < 0 ) {
-						status = 0;
-					}
-				}
-			}
 		// Callback for when everything is done
 		function done( status, nativeStatusText, responses, headers ) {
 			var isSuccess, success, error, response, modified,
@@ -8372,8 +8289,8 @@ jQuery.extend({
 
 		return jqXHR;
 	},
-		
-			getJSON: function( url, data, callback ) {
+
+	getJSON: function( url, data, callback ) {
 		return jQuery.get( url, data, callback, "json" );
 	},
 
@@ -8382,7 +8299,7 @@ jQuery.extend({
 	}
 });
 
-	jQuery.each( [ "get", "post" ], function( i, method ) {
+jQuery.each( [ "get", "post" ], function( i, method ) {
 	jQuery[ method ] = function( url, data, callback, type ) {
 		// Shift arguments if data argument was omitted
 		if ( jQuery.isFunction( data ) ) {
@@ -8401,7 +8318,8 @@ jQuery.extend({
 	};
 });
 
-	jQuery._evalUrl = function( url ) {
+
+jQuery._evalUrl = function( url ) {
 	return jQuery.ajax({
 		url: url,
 		type: "GET",
@@ -8412,8 +8330,8 @@ jQuery.extend({
 	});
 };
 
-	
-	jQuery.fn.extend({
+
+jQuery.fn.extend({
 	wrapAll: function( html ) {
 		var wrap;
 
@@ -8466,8 +8384,7 @@ jQuery.extend({
 		});
 	},
 
-		
-		wrap: function( html ) {
+	wrap: function( html ) {
 		var isFunction = jQuery.isFunction( html );
 
 		return this.each(function( i ) {
@@ -8484,6 +8401,7 @@ jQuery.extend({
 	}
 });
 
+
 jQuery.expr.filters.hidden = function( elem ) {
 	// Support: Opera <= 12.12
 	// Opera reports offsetWidths and offsetHeights less than zero on some elements
@@ -8493,8 +8411,9 @@ jQuery.expr.filters.visible = function( elem ) {
 	return !jQuery.expr.filters.hidden( elem );
 };
 
-	
-	
+
+
+
 var r20 = /%20/g,
 	rbracket = /\[\]$/,
 	rCRLF = /\r?\n/g,
@@ -8529,8 +8448,7 @@ function buildParams( prefix, obj, traditional, add ) {
 	}
 }
 
-	
-	// Serialize an array of form elements or a set of
+// Serialize an array of form elements or a set of
 // key/values into a query string
 jQuery.param = function( a, traditional ) {
 	var prefix,
@@ -8565,8 +8483,7 @@ jQuery.param = function( a, traditional ) {
 	return s.join( "&" ).replace( r20, "+" );
 };
 
-	
-	jQuery.fn.extend({
+jQuery.fn.extend({
 	serialize: function() {
 		return jQuery.param( this.serializeArray() );
 	},
@@ -8597,12 +8514,14 @@ jQuery.param = function( a, traditional ) {
 		}).get();
 	}
 });
-	
-	jQuery.ajaxSettings.xhr = function() {
+
+
+jQuery.ajaxSettings.xhr = function() {
 	try {
 		return new XMLHttpRequest();
 	} catch( e ) {}
 };
+
 var xhrId = 0,
 	xhrCallbacks = {},
 	xhrSuccessStatus = {
@@ -8613,9 +8532,18 @@ var xhrId = 0,
 		1223: 204
 	},
 	xhrSupported = jQuery.ajaxSettings.xhr();
-	
-	
-	
+
+// Support: IE9
+// Open requests must be manually aborted on unload (#5280)
+// See https://support.microsoft.com/kb/2856746 for more info
+if ( window.attachEvent ) {
+	window.attachEvent( "onunload", function() {
+		for ( var key in xhrCallbacks ) {
+			xhrCallbacks[ key ]();
+		}
+	});
+}
+
 support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
 support.ajax = xhrSupported = !!xhrSupported;
 
@@ -8690,7 +8618,6 @@ jQuery.ajaxTransport(function( options ) {
 					};
 				};
 
-				
 				// Listen to events
 				xhr.onload = callback();
 				xhr.onerror = callback("error");
@@ -8718,8 +8645,10 @@ jQuery.ajaxTransport(function( options ) {
 	}
 });
 
-	
-	// Install script dataType
+
+
+
+// Install script dataType
 jQuery.ajaxSetup({
 	accepts: {
 		script: "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"
@@ -8735,8 +8664,7 @@ jQuery.ajaxSetup({
 	}
 });
 
-	
-	// Handle cache's special case and crossDomain
+// Handle cache's special case and crossDomain
 jQuery.ajaxPrefilter( "script", function( s ) {
 	if ( s.cache === undefined ) {
 		s.cache = false;
@@ -8746,8 +8674,6 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 	}
 });
 
-	
-	
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function( s ) {
 	// This transport only deals with cross domain requests
@@ -8780,7 +8706,9 @@ jQuery.ajaxTransport( "script", function( s ) {
 	}
 });
 
-	
+
+
+
 var oldCallbacks = [],
 	rjsonp = /(=)\?(?=&|$)|\?\?/;
 
@@ -8794,7 +8722,7 @@ jQuery.ajaxSetup({
 	}
 });
 
-	// Detect, normalize options and install callbacks for jsonp requests
+// Detect, normalize options and install callbacks for jsonp requests
 jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 	var callbackName, overwritten, responseContainer,
@@ -8861,6 +8789,10 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		return "script";
 	}
 });
+
+
+
+
 // data: string of html
 // context (optional): If specified, the fragment will be created in this context, defaults to document
 // keepScripts (optional): If true, will include scripts passed in the html string
@@ -8890,12 +8822,12 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 
 	return jQuery.merge( [], parsed.childNodes );
 };
-	
-	// Keep a copy of the old load method
+
+
+// Keep a copy of the old load method
 var _load = jQuery.fn.load;
 
-	
-	/**
+/**
  * Load a url into a page
  */
 jQuery.fn.load = function( url, params, callback ) {
@@ -8954,3 +8886,14 @@ jQuery.fn.load = function( url, params, callback ) {
 
 	return this;
 };
+
+
+
+
+// Attach a bunch of functions for handling common AJAX events
+jQuery.each( [ "ajaxStart", "ajaxStop", "ajaxComplete", "ajaxError", "ajaxSuccess", "ajaxSend" ], function( i, type ) {
+	jQuery.fn[ type ] = function( fn ) {
+		return this.on( type, fn );
+	};
+});
+
