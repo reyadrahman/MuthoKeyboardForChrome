@@ -8905,3 +8905,12 @@ jQuery.expr.filters.animated = function( elem ) {
 		return elem === fn.elem;
 	}).length;
 };
+
+	var docElem = window.document.documentElement;
+
+/**
+ * Gets a window from an element
+ */
+function getWindow( elem ) {
+	return jQuery.isWindow( elem ) ? elem : elem.nodeType === 9 && elem.defaultView;
+}
